@@ -1,16 +1,39 @@
 #include <iostream>
 
-// TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-int main() {
-    // TIP Press <shortcut actionId="RenameElement"/> when your caret is at the <b>lang</b> variable name to see how CLion can help you rename it.
-    auto lang = "C++";
-    std::cout << "Hello and welcome to " << lang << "!\n";
+#include <SDL/SDL.h>
 
-    for (int i = 1; i <= 5; i++) {
-        // TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        std::cout << "i = " << i << std::endl;
+int main(int argc, char * argv[])
+{
+    // Initialize SDL with video
+    SDL_Init(SDL_INIT_VIDEO);
+
+    // Create a window with SDL
+    if(SDL_SetVideoMode(640, 480, 32, SDL_DOUBLEBUF | SDL_OPENGL) == 0)
+    {
+        std::cerr << "Failed to set video mode\n";
+        return 1;
     }
 
+
+    SDL_Event event;	 // used to store any events from the OS
+    bool running = true; // used to determine if we're running the game
+
+    while(running)
+    {
+        // poll for events from SDL
+        while(SDL_PollEvent(&event))
+        {
+            // determine if the user still wants to have the window open
+            // (this basically checks if the user has pressed 'X')
+            running = event.type != SDL_QUIT;
+        }
+
+        // Swap OpenGL buffers
+        SDL_GL_SwapBuffers();
+    }
+
+    // Quit SDL
+    SDL_Quit();
+
     return 0;
-    // TIP See CLion help at <a href="https://www.jetbrains.com/help/clion/">jetbrains.com/help/clion/</a>. Also, you can try interactive lessons for CLion by selecting 'Help | Learn IDE Features' from the main menu.
 }
