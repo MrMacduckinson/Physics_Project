@@ -1,0 +1,14 @@
+# sdl12_compat pkg-config source file
+
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=/usr/local/lib
+includedir=/usr/local/include
+
+Name: sdl12_compat
+Description: An SDL-1.2 compatibility layer that uses SDL 2.0 behind the scenes.
+Version: 1.2.71
+Provides: sdl = 1.2.71
+Libs: -L${libdir}  -lSDLmain -lSDL -Wl,-framework,Cocoa
+#Libs.private: -L${libdir} -lSDLmain -lSDL -Wl,-framework,Cocoa 
+Cflags: -I${includedir}/SDL -D_THREAD_SAFE
