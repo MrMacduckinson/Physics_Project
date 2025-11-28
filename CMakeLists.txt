@@ -6,8 +6,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 # Optionally control deployment target / architectures here if desired
-# set(CMAKE_OSX_DEPLOYMENT_TARGET "10.13" CACHE STRING "Minimum macOS deployment version")
-# set(CMAKE_OSX_ARCHITECTURES "x86_64" CACHE STRING "Architectures to build for")
+set(CMAKE_OSX_DEPLOYMENT_TARGET "11.0")
+set(CMAKE_OSX_ARCHITECTURES "x86_64" CACHE STRING "Architectures to build for")
 
 # --- Paths to vendored library sources ---
 set(LIBRARY_SOURCES_DIR "${CMAKE_CURRENT_SOURCE_DIR}/library_sources")
