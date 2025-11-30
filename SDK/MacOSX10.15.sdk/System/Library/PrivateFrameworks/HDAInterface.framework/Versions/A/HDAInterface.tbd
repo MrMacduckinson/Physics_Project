@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CDFF2BA0-90CD-3A12-A546-C861D6E3BB16' ]
+uuids:           [ 'x86_64: 2EC569E3-F67A-3CC9-A70B-CFD423D4DAE8' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/HDAInterface.framework/Versions/A/HDAInterface'
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _HDAAudioEngineInputClass, _HDAAudioEngineOutputClass, _HDAErrorDomain ]
     objc-classes:    [ HDAAudioEngineUserClient, HDABuiltinCodecInterface, HDAControllerInterface, 

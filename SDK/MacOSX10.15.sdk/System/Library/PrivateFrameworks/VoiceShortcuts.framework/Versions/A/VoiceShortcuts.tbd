@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 954EE624-380B-3805-92E0-227CB32FE79B' ]
+uuids:           [ 'x86_64: 2A43881E-DE4B-347D-8D16-5CFD6B940658' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/VoiceShortcuts.framework/Versions/A/VoiceShortcuts'
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _VCAccessSyncServiceState, _VCAssertUniqueMessageTypes, _VCClearSyncServiceState, 
                        _VCDarwinNotificationStateUserInfoKey, _VCDescriptionForChange, 
@@ -20,8 +20,7 @@ exports:
                        _VCXPCEventLaunchServicesApplicationRegistered, _VCXPCEventLaunchServicesApplicationStateChanged, 
                        _VCXPCEventLaunchServicesApplicationUnregistered, _VCXPCEventPairedDeviceDidChangeVersion, 
                        _VCXPCEventStreamDarwinNotifications, _VCXPCEventStreamDistributedNotifications, 
-                       _VCXPCSignificantTimeChange, _VoiceShortcutsVersionNumber, 
-                       _VoiceShortcutsVersionString ]
+                       _VoiceShortcutsVersionNumber, _VoiceShortcutsVersionString ]
     objc-classes:    [ VCCKNotificationCenter, VCCKVoiceShortcutFetcher, VCCoreDataStore, 
                        VCCoreDuetListener, VCDaemon, VCDaemonDatabaseProvider, VCDaemonSyncDataEndpoint, 
                        VCDaemonXPCEventHandler, VCDailyMetricCheckIn, VCDailyMetricSubmitter, 

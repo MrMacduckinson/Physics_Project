@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: 69FA0C4F-B59D-374A-9DCF-E9FA79F332FD', 'x86_64: 69FA0C4F-B59D-374A-9DCF-E9FA79F332FD', 
-                   'x86_64h: 99C61C48-B14C-3DA6-8C31-6BF72DA0A3A9', 'x86_64h: 99C61C48-B14C-3DA6-8C31-6BF72DA0A3A9' ]
+uuids:           [ 'x86_64: 8FBAAA82-90E2-3EDD-A96B-8D2139DCA619', 'x86_64: 8FBAAA82-90E2-3EDD-A96B-8D2139DCA619', 
+                   'x86_64h: BAE2A5E4-14A1-3C54-86DF-888FA26C745E', 'x86_64h: BAE2A5E4-14A1-3C54-86DF-888FA26C745E' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBNNS.dylib'
-exports:
+exports:         
   - archs:           [ x86_64, x86_64h ]
     allowable-clients: [ vecLib ]
     symbols:         [ _BNNSApplyVectorActivationLayer, _BNNSBatchNormFilterApplyBackwardBatch, 

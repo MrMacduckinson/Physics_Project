@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B3AA91BA-0BA1-3123-B642-81BB072715D0' ]
+uuids:           [ 'x86_64: 8839554C-A709-39A1-B89D-5678175A2058' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CloudKitDaemon.framework/Versions/A/CloudKitDaemon'
-current-version: 867
-exports:
+current-version: 854
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CKAdoptPersonaID, _CKCurrentPersonaID, _CKDAssetCacheDbSchema, 
                        _CKDMMCSRegisterOptionDescription, _CKDPDateStatisticsReadFrom, 

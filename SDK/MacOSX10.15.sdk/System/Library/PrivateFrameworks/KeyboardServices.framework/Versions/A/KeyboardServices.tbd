@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AE88B62F-606D-3594-8A52-AA37AB12E33F', 'x86_64: AE88B62F-606D-3594-8A52-AA37AB12E33F' ]
+uuids:           [ 'x86_64: EB3D7EE2-97B0-3FAC-9A80-7D92A5DCB087', 'x86_64: EB3D7EE2-97B0-3FAC-9A80-7D92A5DCB087' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/KeyboardServices.framework/KeyboardServices'
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _KSCKErrorDomain, _KSCloudKitAccountDidChange, _KSCloudKitAccountDidChangeAccountChangedKey, 
                        _KSCloudKitAccountDidChangeDeviceToDeviceKey, _KSCloudKitAccountDidChangeStatusKey, 

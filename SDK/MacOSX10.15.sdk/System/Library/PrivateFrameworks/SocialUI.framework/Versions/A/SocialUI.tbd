@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 99B1D079-4088-3A16-B3FE-C72310DE0868' ]
+uuids:           [ 'x86_64: 0AB594F6-83F8-3B77-8AE7-1B75ED4D16C4' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SocialUI.framework/Versions/A/SocialUI'
 current-version: 5500
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AcknowledgmentPickerDOMProviderMaximumBubbleXPosition, _AcknowledgmentPickerDOMProviderPickerButtonAnimationClass, 
                        _AcknowledgmentPickerDOMProviderPickerButtonContainerElementType, 

@@ -1,11 +1,11 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7E42C422-05DD-3865-B31D-A815D4763100', 'x86_64: 7E42C422-05DD-3865-B31D-A815D4763100' ]
+uuids:           [ 'x86_64: 13DA9F10-A6ED-3F55-863E-0EC570CB3A48', 'x86_64: 13DA9F10-A6ED-3F55-863E-0EC570CB3A48' ]
 platform:        zippered
 install-name:    '/usr/lib/swift/libswiftModelIO.dylib'
 current-version: 0
 swift-abi-version: 7
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ '$ld$install_name$os10.10$@rpath/libswiftModelIO.dylib', '$ld$install_name$os10.11$@rpath/libswiftModelIO.dylib', 
                        '$ld$install_name$os10.12$@rpath/libswiftModelIO.dylib', '$ld$install_name$os10.13$@rpath/libswiftModelIO.dylib', 

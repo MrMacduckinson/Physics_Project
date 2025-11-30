@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: ABBB6E81-FF5E-3F8D-9103-3C4CE1E8A028' ]
+uuids:           [ 'x86_64: 17CA9407-19A1-30C6-91BB-14EB2D7504B7' ]
 platform:        macosx
 install-name:    '/SetupAssistantSupport.framework/Versions/A/SetupAssistantSupport'
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _SASProximityActionTypeKey, _SASProximityErrorDomain, _SASProximityPayloadTypeKey, 
                        _SASProximityVersionKey, _SASProximityVersionValue, _SetupAssistantSupportVersionNumber, 

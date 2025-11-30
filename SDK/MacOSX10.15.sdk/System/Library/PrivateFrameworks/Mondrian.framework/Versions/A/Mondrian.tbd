@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DC204772-C4A0-371B-8367-285E016DA209' ]
+uuids:           [ 'x86_64: 5D30216B-EF71-3120-AC50-CC083EDF3B8F' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Mondrian.framework/Versions/A/Mondrian'
-current-version: 161.0.120
-exports:
+current-version: 111.16.180
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _GridRectEdgeOppositeEdge, _MOAVAssetCreateThumbnailWithURL, 
                        _MOAssetsViewCustomStyleCellRegistration, _MOAssetsViewCustomStyleDefaultCellRegistration, 

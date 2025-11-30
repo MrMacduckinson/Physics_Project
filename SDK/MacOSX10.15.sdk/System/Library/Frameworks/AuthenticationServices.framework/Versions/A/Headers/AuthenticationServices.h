@@ -34,8 +34,6 @@
 #import <AuthenticationServices/ASAuthorizationSingleSignOnRequest.h>
 #import <AuthenticationServices/ASAuthorizationProviderExtensionAuthorizationRequest.h>
 
-#import <AuthenticationServices/ASExtensionErrors.h>
-
 #if TARGET_OS_IOS && !(defined(TARGET_OS_MACCATALYST) && TARGET_OS_MACCATALYST)
 #import <AuthenticationServices/ASCredentialProviderViewController.h>
 #endif

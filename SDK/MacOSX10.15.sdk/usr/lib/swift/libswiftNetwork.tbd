@@ -1,11 +1,11 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7C2158A2-A4BE-391A-A46E-2D54DD85E716', 'x86_64: 7C2158A2-A4BE-391A-A46E-2D54DD85E716' ]
+uuids:           [ 'x86_64: 9CDACFB1-5A91-3C1E-A394-6E4E198939D2', 'x86_64: 9CDACFB1-5A91-3C1E-A394-6E4E198939D2' ]
 platform:        zippered
 install-name:    '/usr/lib/swift/libswiftNetwork.dylib'
 current-version: 0
 swift-abi-version: 7
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ '$ld$install_name$os10.10$@rpath/libswiftNetwork.dylib', '$ld$install_name$os10.11$@rpath/libswiftNetwork.dylib', 
                        '$ld$install_name$os10.12$@rpath/libswiftNetwork.dylib', '$ld$install_name$os10.13$@rpath/libswiftNetwork.dylib', 

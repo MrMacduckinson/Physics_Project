@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0BB2FA58-04BD-31FB-9F8B-D57ADF9E4BB2', 'x86_64: 0BB2FA58-04BD-31FB-9F8B-D57ADF9E4BB2' ]
+uuids:           [ 'x86_64: 64947BC3-DE21-3220-AE94-436A86A5D083', 'x86_64: 64947BC3-DE21-3220-AE94-436A86A5D083' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/InternationalTextSearch.framework/Versions/A/InternationalTextSearch'
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ITSCollationContextFreeContextForDatabaseHandle, _ITSCopyFTSTableCreateStatementUsingCurrentLanguage, 
                        _ITSCopyFTSTableCreateStatementWithLanguageAndCollator, _ITSCopySearchCollatorForLanguage, 

@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0E8E7F50-FFCC-39BA-9103-6330F95497AD' ]
+uuids:           [ 'x86_64: 0AB5683D-6BF2-3E4F-B1FE-18A333C176FC' ]
 platform:        macosx
 install-name:    '/usr/lib/libIASAuthReboot.dylib'
 current-version: 1000
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _IARAuthenticatedRestartSupported, _IARCommitLoginCredentials, 
                        _IARCommitLoginCredentialsFinalized, _IARIALibRootSideStashLoginCredentialsWithUserData, 

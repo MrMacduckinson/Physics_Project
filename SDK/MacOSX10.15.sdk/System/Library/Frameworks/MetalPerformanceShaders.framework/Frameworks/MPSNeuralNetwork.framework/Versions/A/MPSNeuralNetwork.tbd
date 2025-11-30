@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 05612E06-50CB-318F-9F8E-EF4D49FAB3B0', 'x86_64: 05612E06-50CB-318F-9F8E-EF4D49FAB3B0' ]
+uuids:           [ 'x86_64: 46C9BDBB-1FB9-3E1A-A02C-818D16E472D9', 'x86_64: 46C9BDBB-1FB9-3E1A-A02C-818D16E472D9' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSNeuralNetwork.framework/Versions/A/MPSNeuralNetwork'
-current-version: 122.5.6
-exports:
+current-version: 122.2
+exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ MetalPerformanceShaders ]
     symbols:         [ _DeadlockedBecauseTheCPUBasedWeightUpdateForThePreviousBatchOccursAtCompletionOfThisCmdBuf_TryGPUUpdateOrNewCmdBufInstead ]

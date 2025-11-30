@@ -42,9 +42,6 @@
 
 #include <sys/_types/_sa_family_t.h>
 
-#include <Availability.h>
-#define __NKE_API_DEPRECATED __API_DEPRECATED("Network Kernel Extension KPI is deprecated", macos(10.4, 10.15.4))
-
 #if (TARGET_OS_IPHONE && !TARGET_OS_SIMULATOR)
 #define KPI_INTERFACE_EMBEDDED 1
 #else
@@ -764,8 +761,7 @@ __BEGIN_DECLS
  *               been allocated and is in use.
  */
 extern errno_t ifnet_allocate(const struct ifnet_init_params *init,
-    ifnet_t *interface)
-__NKE_API_DEPRECATED;
+    ifnet_t *interface);
 
 
 /*!
@@ -776,8 +772,7 @@ __NKE_API_DEPRECATED;
  *       @param interface The interface to increment the reference count of.
  *       @result May return EINVAL if the interface is not valid.
  */
-extern errno_t ifnet_reference(ifnet_t interface)
-__NKE_API_DEPRECATED;
+extern errno_t ifnet_reference(ifnet_t interface);
 
 /*!
  *       @function ifnet_release
@@ -787,8 +782,7 @@ __NKE_API_DEPRECATED;
  *               and possibly free.
  *       @result May return EINVAL if the interface is not valid.
  */
-extern errno_t ifnet_release(ifnet_t interface)
-__NKE_API_DEPRECATED;
+extern errno_t ifnet_release(ifnet_t interface);
 
 /*!
  *       @function ifnet_attach
@@ -809,8 +803,7 @@ __NKE_API_DEPRECATED;
  *               interface.
  */
 extern errno_t ifnet_attach(ifnet_t interface,
-    const struct sockaddr_dl *ll_addr)
-__NKE_API_DEPRECATED;
+    const struct sockaddr_dl *ll_addr);
 
 /*!
  *       @function ifnet_detach
@@ -836,8 +829,7 @@ __NKE_API_DEPRECATED;
  *       @param interface The interface to detach.
  *       @result 0 on success, otherwise errno error.
  */
-extern errno_t ifnet_detach(ifnet_t interface)
-__NKE_API_DEPRECATED;
+extern errno_t ifnet_detach(ifnet_t interface);
 
 /*!
  *       @function ifnet_interface_family_find
@@ -856,8 +848,7 @@ __NKE_API_DEPRECATED;
  *               is rebooted.
  *       @result 0 on success, otherwise errno error.
  */
-extern errno_t ifnet_interface_family_find(const char *module_string, ifnet_family_t *family_id)
-__NKE_API_DEPRECATED;
+extern errno_t ifnet_interface_family_find(const char *module_string, ifnet_family_t *family_id);
 
 /*
  * Interface manipulation.
@@ -869,8 +860,7 @@ __NKE_API_DEPRECATED;
  *       @param interface Interface to retrieve the storage from.
  *       @result Driver's private storage.
  */
-extern void *ifnet_softc(ifnet_t interface)
-__NKE_API_DEPRECATED;
+extern void *ifnet_softc(ifnet_t interface);
 
 /*!
  *       @function ifnet_name
@@ -878,8 +868,7 @@ __NKE_API_DEPRECATED;
  *       @param interface Interface to retrieve the name from.
  *       @result Pointer to the name.
  */
-extern const char *ifnet_name(ifnet_t interface)
-__NKE_API_DEPRECATED;
+extern const char *ifnet_name(ifnet_t interface);
 
 /*!
  *       @function ifnet_family
@@ -887,8 +876,7 @@ __NKE_API_DEPRECATED;
  *       @param interface Interface to retrieve the family from.
  *       @result Interface family type.
  */
-extern ifnet_family_t ifnet_family(ifnet_t interface)
-__NKE_API_DEPRECATED;
+extern ifnet_family_t ifnet_family(ifnet_t interface);
 
 
 /*!
@@ -897,9 +885,7 @@ __NKE_API_DEPRECATED;
  *       @param interface Interface to retrieve the unit number from.
  *       @result Unit number.
  */
-extern u_int32_t ifnet_unit(ifnet_t interface)
-__NKE_API_DEPRECATED;
-
+extern u_int32_t ifnet_unit(ifnet_t interface);
 
 /*!
  *       @function ifnet_index
@@ -911,8 +897,7 @@ __NKE_API_DEPRECATED;
  *       @param interface Interface to retrieve the index of.
  *       @result Index.
  */
-extern u_int32_t ifnet_index(ifnet_t interface)
-__NKE_API_DEPRECATED;
+extern u_int32_t ifnet_index(ifnet_t interface);
 
 /*!
  *       @function ifnet_set_flags
@@ -927,8 +912,7 @@ __NKE_API_DEPRECATED;
  *       @result 0 on success otherwise the errno error.
  */
 extern errno_t ifnet_set_flags(ifnet_t interface, u_int16_t new_flags,
-    u_int16_t mask)
-__NKE_API_DEPRECATED;
+    u_int16_t mask);
 
 /*!
  *       @function ifnet_flags
@@ -936,8 +920,8 @@ __NKE_API_DEPRECATED;
  *       @param interface Interface to retrieve the flags from.
  *       @result Flags. These flags are defined in net/if.h
  */
-extern u_int16_t ifnet_flags(ifnet_t interface)
-__NKE_API_DEPRECATED;
+extern u_int16_t ifnet_flags(ifnet_t interface);
+
 
 
 /*!
@@ -961,8 +945,7 @@ __NKE_API_DEPRECATED;
  *       @result 0 on success otherwise the errno error.
  */
 extern errno_t ifnet_set_capabilities_supported(ifnet_t interface, u_int32_t new_caps,
-    u_int32_t mask)
-__NKE_API_DEPRECATED;
+    u_int32_t mask);
 
 /*!
  *       @function ifnet_capabilities_supported
@@ -970,8 +953,7 @@ __NKE_API_DEPRECATED;
  *       @param interface Interface to retrieve the capabilities from.
  *       @result Flags. Capabilities flags are defined in net/if.h
  */
-extern u_int32_t ifnet_capabilities_supported(ifnet_t interface)
-__NKE_API_DEPRECATED;
+extern u_int32_t ifnet_capabilities_supported(ifnet_t interface);
 
 /*!
  *       @function ifnet_set_capabilities_enabled
@@ -1003,8 +985,7 @@ __NKE_API_DEPRECATED;
  *       @result 0 on success otherwise the errno error.
  */
 extern errno_t ifnet_set_capabilities_enabled(ifnet_t interface, u_int32_t new_caps,
-    u_int32_t mask)
-__NKE_API_DEPRECATED;
+    u_int32_t mask);
 
 /*!
  *       @function ifnet_capabilities_enabled
@@ -1012,8 +993,8 @@ __NKE_API_DEPRECATED;
  *       @param interface Interface to retrieve the capabilities from.
  *       @result Flags. Capabilities flags are defined in net/if.h
  */
-extern u_int32_t ifnet_capabilities_enabled(ifnet_t interface)
-__NKE_API_DEPRECATED;
+extern u_int32_t ifnet_capabilities_enabled(ifnet_t interface);
+
 
 /*!
  *       @function ifnet_set_offload
@@ -1031,8 +1012,7 @@ __NKE_API_DEPRECATED;
  *               the device supports.
  *       @result 0 on success otherwise the errno error.
  */
-extern errno_t ifnet_set_offload(ifnet_t interface, ifnet_offload_t offload)
-__NKE_API_DEPRECATED;
+extern errno_t ifnet_set_offload(ifnet_t interface, ifnet_offload_t offload);
 
 /*!
  *       @function ifnet_offload
@@ -1041,8 +1021,7 @@ __NKE_API_DEPRECATED;
  *       @param interface Interface to retrieve the offload from.
  *       @result Abilities flags, see ifnet_offload_t.
  */
-extern ifnet_offload_t ifnet_offload(ifnet_t interface)
-__NKE_API_DEPRECATED;
+extern ifnet_offload_t ifnet_offload(ifnet_t interface);
 
 /*!
  *       @function ifnet_set_tso_mtu
@@ -1055,8 +1034,7 @@ __NKE_API_DEPRECATED;
  *       @result 0 on success otherwise the errno error.
  */
 extern errno_t ifnet_set_tso_mtu(ifnet_t interface, sa_family_t family,
-    u_int32_t mtuLen)
-__NKE_API_DEPRECATED;
+    u_int32_t mtuLen);
 
 /*!
  *       @function ifnet_get_tso_mtu
@@ -1070,8 +1048,7 @@ __NKE_API_DEPRECATED;
  *       @result 0 on success otherwise the errno error.
  */
 extern errno_t ifnet_get_tso_mtu(ifnet_t interface, sa_family_t family,
-    u_int32_t *mtuLen)
-__NKE_API_DEPRECATED;
+    u_int32_t *mtuLen);
 
 /*!
  *       @enum Interface wake properties
@@ -1091,8 +1068,7 @@ enum {
  *       @param mask Mask of the properties to set of unset.
  *       @result 0 on success otherwise the errno error.
  */
-extern errno_t ifnet_set_wake_flags(ifnet_t interface, u_int32_t properties, u_int32_t mask)
-__NKE_API_DEPRECATED;
+extern errno_t ifnet_set_wake_flags(ifnet_t interface, u_int32_t properties, u_int32_t mask);
 
 /*!
  *       @function ifnet_get_wake_flags
@@ -1100,8 +1076,7 @@ __NKE_API_DEPRECATED;
  *       @param interface The interface.
  *       @result The wake properties
  */
-extern u_int32_t ifnet_get_wake_flags(ifnet_t interface)
-__NKE_API_DEPRECATED;
+extern u_int32_t ifnet_get_wake_flags(ifnet_t interface);
 
 /*!
  *       @function ifnet_set_link_mib_data
@@ -1120,8 +1095,7 @@ __NKE_API_DEPRECATED;
  *       @result 0 on success otherwise the errno error.
  */
 extern errno_t ifnet_set_link_mib_data(ifnet_t interface, void *mibData,
-    u_int32_t mibLen)
-__NKE_API_DEPRECATED;
+    u_int32_t mibLen);
 
 /*!
  *       @function ifnet_get_link_mib_data
@@ -1138,8 +1112,7 @@ __NKE_API_DEPRECATED;
  *               no data.
  */
 extern errno_t ifnet_get_link_mib_data(ifnet_t interface, void *mibData,
-    u_int32_t *mibLen)
-__NKE_API_DEPRECATED;
+    u_int32_t *mibLen);
 
 /*!
  *       @function ifnet_get_link_mib_data_length
@@ -1148,8 +1121,7 @@ __NKE_API_DEPRECATED;
  *       @result Returns the number of bytes of mib data associated with the
  *               interface.
  */
-extern u_int32_t ifnet_get_link_mib_data_length(ifnet_t interface)
-__NKE_API_DEPRECATED;
+extern u_int32_t ifnet_get_link_mib_data_length(ifnet_t interface);
 
 /*!
  *       @function ifnet_attach_protocol
@@ -1162,8 +1134,7 @@ __NKE_API_DEPRECATED;
  */
 extern errno_t ifnet_attach_protocol(ifnet_t interface,
     protocol_family_t protocol_family,
-    const struct ifnet_attach_proto_param *proto_details)
-__NKE_API_DEPRECATED;
+    const struct ifnet_attach_proto_param *proto_details);
 
 /*!
  *       @function ifnet_attach_protocol_v2
@@ -1178,8 +1149,7 @@ __NKE_API_DEPRECATED;
  */
 extern errno_t ifnet_attach_protocol_v2(ifnet_t interface,
     protocol_family_t protocol_family,
-    const struct ifnet_attach_proto_param_v2 *proto_details)
-__NKE_API_DEPRECATED;
+    const struct ifnet_attach_proto_param_v2 *proto_details);
 
 /*!
  *       @function ifnet_detach_protocol
@@ -1190,8 +1160,7 @@ __NKE_API_DEPRECATED;
  *       @result 0 on success otherwise the errno error.
  */
 extern errno_t ifnet_detach_protocol(ifnet_t interface,
-    protocol_family_t protocol_family)
-__NKE_API_DEPRECATED;
+    protocol_family_t protocol_family);
 
 /*!
  *       @function ifnet_output
@@ -1217,8 +1186,7 @@ __NKE_API_DEPRECATED;
  */
 extern errno_t ifnet_output(ifnet_t interface,
     protocol_family_t protocol_family, mbuf_t packet, void *route,
-    const struct sockaddr *dest)
-__NKE_API_DEPRECATED;
+    const struct sockaddr *dest);
 
 /*!
  *       @function ifnet_output_raw
@@ -1238,8 +1206,7 @@ __NKE_API_DEPRECATED;
  *       @result 0 on success otherwise the errno error.
  */
 extern errno_t ifnet_output_raw(ifnet_t interface,
-    protocol_family_t protocol_family, mbuf_t packet)
-__NKE_API_DEPRECATED;
+    protocol_family_t protocol_family, mbuf_t packet);
 
 /*!
  *       @function ifnet_input
@@ -1256,8 +1223,7 @@ __NKE_API_DEPRECATED;
  *       @result 0 on success otherwise the errno error.
  */
 extern errno_t ifnet_input(ifnet_t interface, mbuf_t first_packet,
-    const struct ifnet_stat_increment_param *stats)
-__NKE_API_DEPRECATED;
+    const struct ifnet_stat_increment_param *stats);
 
 
 /*!
@@ -1277,8 +1243,7 @@ __NKE_API_DEPRECATED;
  *       @result 0 on success otherwise the errno error.
  */
 extern errno_t ifnet_ioctl(ifnet_t interface, protocol_family_t protocol,
-    unsigned long ioctl_code, void *ioctl_arg)
-__NKE_API_DEPRECATED;
+    unsigned long ioctl_code, void *ioctl_arg);
 
 /*!
  *       @function ifnet_event
@@ -1288,8 +1253,7 @@ __NKE_API_DEPRECATED;
  *               event.
  *       @result 0 on success otherwise the errno error.
  */
-extern errno_t ifnet_event(ifnet_t interface, struct kern_event_msg *event_ptr)
-__NKE_API_DEPRECATED;
+extern errno_t ifnet_event(ifnet_t interface, struct kern_event_msg *event_ptr);
 
 /*!
  *       @function ifnet_set_mtu
@@ -1304,24 +1268,21 @@ __NKE_API_DEPRECATED;
  *       @param mtu The new MTU.
  *       @result 0 on success otherwise the errno error.
  */
-extern errno_t ifnet_set_mtu(ifnet_t interface, u_int32_t mtu)
-__NKE_API_DEPRECATED;
+extern errno_t ifnet_set_mtu(ifnet_t interface, u_int32_t mtu);
 
 /*!
  *       @function ifnet_mtu
  *       @param interface The interface.
  *       @result The MTU.
  */
-extern u_int32_t ifnet_mtu(ifnet_t interface)
-__NKE_API_DEPRECATED;
+extern u_int32_t ifnet_mtu(ifnet_t interface);
 
 /*!
  *       @function ifnet_type
  *       @param interface The interface.
  *       @result The type. See net/if_types.h.
  */
-extern u_int8_t ifnet_type(ifnet_t interface)
-__NKE_API_DEPRECATED;
+extern u_int8_t ifnet_type(ifnet_t interface);
 
 /*!
  *       @function ifnet_set_addrlen
@@ -1333,16 +1294,14 @@ __NKE_API_DEPRECATED;
  *       @param addrlen The new address length.
  *       @result 0 on success otherwise the errno error.
  */
-extern errno_t ifnet_set_addrlen(ifnet_t interface, u_int8_t addrlen)
-__NKE_API_DEPRECATED;
+extern errno_t ifnet_set_addrlen(ifnet_t interface, u_int8_t addrlen);
 
 /*!
  *       @function ifnet_addrlen
  *       @param interface The interface.
  *       @result The address length.
  */
-extern u_int8_t ifnet_addrlen(ifnet_t interface)
-__NKE_API_DEPRECATED;
+extern u_int8_t ifnet_addrlen(ifnet_t interface);
 
 /*!
  *       @function ifnet_set_hdrlen
@@ -1354,16 +1313,14 @@ __NKE_API_DEPRECATED;
  *       @param hdrlen The new header length.
  *       @result 0 on success otherwise the errno error.
  */
-extern errno_t ifnet_set_hdrlen(ifnet_t interface, u_int8_t hdrlen)
-__NKE_API_DEPRECATED;
+extern errno_t ifnet_set_hdrlen(ifnet_t interface, u_int8_t hdrlen);
 
 /*!
  *       @function ifnet_hdrlen
  *       @param interface The interface.
  *       @result The header length.
  */
-extern u_int8_t ifnet_hdrlen(ifnet_t interface)
-__NKE_API_DEPRECATED;
+extern u_int8_t ifnet_hdrlen(ifnet_t interface);
 
 /*!
  *       @function ifnet_set_metric
@@ -1375,16 +1332,14 @@ __NKE_API_DEPRECATED;
  *       @param metric The new metric.
  *       @result 0 on success otherwise the errno error.
  */
-extern errno_t ifnet_set_metric(ifnet_t interface, u_int32_t metric)
-__NKE_API_DEPRECATED;
+extern errno_t ifnet_set_metric(ifnet_t interface, u_int32_t metric);
 
 /*!
  *       @function ifnet_metric
  *       @param interface The interface.
  *       @result The metric.
  */
-extern u_int32_t ifnet_metric(ifnet_t interface)
-__NKE_API_DEPRECATED;
+extern u_int32_t ifnet_metric(ifnet_t interface);
 
 /*!
  *       @function ifnet_set_baudrate
@@ -1396,16 +1351,14 @@ __NKE_API_DEPRECATED;
  *       @param baudrate The new baudrate.
  *       @result 0 on success otherwise the errno error.
  */
-extern errno_t ifnet_set_baudrate(ifnet_t interface, u_int64_t baudrate)
-__NKE_API_DEPRECATED;
+extern errno_t ifnet_set_baudrate(ifnet_t interface, u_int64_t baudrate);
 
 /*!
  *       @function ifnet_baudrate
  *       @param interface The interface.
  *       @result The baudrate.
  */
-extern u_int64_t ifnet_baudrate(ifnet_t interface)
-__NKE_API_DEPRECATED;
+extern u_int64_t ifnet_baudrate(ifnet_t interface);
 
 
 /*!
@@ -1421,8 +1374,7 @@ __NKE_API_DEPRECATED;
  *       @result 0 on success otherwise the errno error.
  */
 extern errno_t ifnet_stat_increment(ifnet_t interface,
-    const struct ifnet_stat_increment_param *counts)
-__NKE_API_DEPRECATED;
+    const struct ifnet_stat_increment_param *counts);
 
 /*!
  *       @function ifnet_stat_increment_in
@@ -1442,8 +1394,7 @@ __NKE_API_DEPRECATED;
  *       @result 0 on success otherwise the errno error.
  */
 extern errno_t ifnet_stat_increment_in(ifnet_t interface,
-    u_int32_t packets_in, u_int32_t bytes_in, u_int32_t errors_in)
-__NKE_API_DEPRECATED;
+    u_int32_t packets_in, u_int32_t bytes_in, u_int32_t errors_in);
 
 /*!
  *       @function ifnet_stat_increment_out
@@ -1462,8 +1413,7 @@ __NKE_API_DEPRECATED;
  *       @result 0 on success otherwise the errno error.
  */
 extern errno_t ifnet_stat_increment_out(ifnet_t interface,
-    u_int32_t packets_out, u_int32_t bytes_out, u_int32_t errors_out)
-__NKE_API_DEPRECATED;
+    u_int32_t packets_out, u_int32_t bytes_out, u_int32_t errors_out);
 
 /*!
  *       @function ifnet_set_stat
@@ -1479,8 +1429,7 @@ __NKE_API_DEPRECATED;
  *       @result 0 on success otherwise the errno error.
  */
 extern errno_t ifnet_set_stat(ifnet_t interface,
-    const struct ifnet_stats_param *stats)
-__NKE_API_DEPRECATED;
+    const struct ifnet_stats_param *stats);
 
 /*!
  *       @function ifnet_stat
@@ -1489,8 +1438,7 @@ __NKE_API_DEPRECATED;
  *       @result 0 on success otherwise the errno error.
  */
 extern errno_t ifnet_stat(ifnet_t interface,
-    struct ifnet_stats_param *out_stats)
-__NKE_API_DEPRECATED;
+    struct ifnet_stats_param *out_stats);
 
 /*!
  *       @function ifnet_set_promiscuous
@@ -1507,8 +1455,7 @@ __NKE_API_DEPRECATED;
  *               zero, promiscuous mode will be disabled.
  *       @result 0 on success otherwise the errno error.
  */
-extern errno_t ifnet_set_promiscuous(ifnet_t interface, int on)
-__NKE_API_DEPRECATED;
+extern errno_t ifnet_set_promiscuous(ifnet_t interface, int on);
 
 /*!
  *       @function ifnet_touch_lastchange
@@ -1516,8 +1463,7 @@ __NKE_API_DEPRECATED;
  *       @param interface The interface.
  *       @result 0 on success otherwise the errno error.
  */
-extern errno_t ifnet_touch_lastchange(ifnet_t interface)
-__NKE_API_DEPRECATED;
+extern errno_t ifnet_touch_lastchange(ifnet_t interface);
 
 /*!
  *       @function ifnet_lastchange
@@ -1525,8 +1471,7 @@ __NKE_API_DEPRECATED;
  *       @param last_change A timeval struct to copy the last time changed in
  *               to.
  */
-extern errno_t ifnet_lastchange(ifnet_t interface, struct timeval *last_change)
-__NKE_API_DEPRECATED;
+extern errno_t ifnet_lastchange(ifnet_t interface, struct timeval *last_change);
 
 /*!
  *       @function ifnet_get_address_list
@@ -1541,8 +1486,7 @@ __NKE_API_DEPRECATED;
  *       @param addresses A pointer to a NULL terminated array of ifaddr_ts.
  *       @result 0 on success otherwise the errno error.
  */
-extern errno_t ifnet_get_address_list(ifnet_t interface, ifaddr_t **addresses)
-__NKE_API_DEPRECATED;
+extern errno_t ifnet_get_address_list(ifnet_t interface, ifaddr_t **addresses);
 
 /*!
  *       @function ifnet_get_address_list_family
@@ -1560,8 +1504,7 @@ __NKE_API_DEPRECATED;
  *       @result 0 on success otherwise the errno error.
  */
 extern errno_t ifnet_get_address_list_family(ifnet_t interface,
-    ifaddr_t **addresses, sa_family_t family)
-__NKE_API_DEPRECATED;
+    ifaddr_t **addresses, sa_family_t family);
 
 
 /*!
@@ -1571,8 +1514,7 @@ __NKE_API_DEPRECATED;
  *               memory used for the array of references.
  *       @param addresses An array of ifaddr_ts.
  */
-extern void ifnet_free_address_list(ifaddr_t *addresses)
-__NKE_API_DEPRECATED;
+extern void ifnet_free_address_list(ifaddr_t *addresses);
 
 /*!
  *       @function ifnet_set_lladdr
@@ -1584,8 +1526,7 @@ __NKE_API_DEPRECATED;
  *       @param lladdr_len The length, in bytes, of the link layer address.
  */
 extern errno_t ifnet_set_lladdr(ifnet_t interface, const void *lladdr,
-    size_t lladdr_len)
-__NKE_API_DEPRECATED;
+    size_t lladdr_len);
 
 /*!
  *       @function ifnet_lladdr_copy_bytes
@@ -1597,8 +1538,7 @@ __NKE_API_DEPRECATED;
  *               length of the link-layer address.
  */
 extern errno_t ifnet_lladdr_copy_bytes(ifnet_t interface, void *lladdr,
-    size_t length)
-__NKE_API_DEPRECATED;
+    size_t length);
 
 
 /*!
@@ -1611,8 +1551,7 @@ __NKE_API_DEPRECATED;
  *       @param out_len On return, the length of the broadcast address.
  */
 extern errno_t ifnet_llbroadcast_copy_bytes(ifnet_t interface, void *addr,
-    size_t bufferlen, size_t *out_len)
-__NKE_API_DEPRECATED;
+    size_t bufferlen, size_t *out_len);
 
 
 /*!
@@ -1630,8 +1569,7 @@ __NKE_API_DEPRECATED;
  *               indicate other failures.
  */
 extern errno_t ifnet_resolve_multicast(ifnet_t ifp,
-    const struct sockaddr *proto_addr, struct sockaddr *ll_addr, size_t ll_len)
-__NKE_API_DEPRECATED;
+    const struct sockaddr *proto_addr, struct sockaddr *ll_addr, size_t ll_len);
 
 /*!
  *       @function ifnet_add_multicast
@@ -1648,8 +1586,7 @@ __NKE_API_DEPRECATED;
  *       @result 0 on success otherwise the errno error.
  */
 extern errno_t ifnet_add_multicast(ifnet_t interface,
-    const struct sockaddr *maddr, ifmultiaddr_t *multicast)
-__NKE_API_DEPRECATED;
+    const struct sockaddr *maddr, ifmultiaddr_t *multicast);
 
 /*!
  *       @function ifnet_remove_multicast
@@ -1675,8 +1612,7 @@ __NKE_API_DEPRECATED;
  *       @param multicast The multicast to be removed.
  *       @result 0 on success otherwise the errno error.
  */
-extern errno_t ifnet_remove_multicast(ifmultiaddr_t multicast)
-__NKE_API_DEPRECATED;
+extern errno_t ifnet_remove_multicast(ifmultiaddr_t multicast);
 
 /*!
  *       @function ifnet_get_multicast_list
@@ -1692,8 +1628,7 @@ __NKE_API_DEPRECATED;
  *       @result 0 on success otherwise the errno error.
  */
 extern errno_t ifnet_get_multicast_list(ifnet_t interface,
-    ifmultiaddr_t **addresses)
-__NKE_API_DEPRECATED;
+    ifmultiaddr_t **addresses);
 
 /*!
  *       @function ifnet_free_multicast_list
@@ -1702,8 +1637,7 @@ __NKE_API_DEPRECATED;
  *               multicast address and frees the array.
  *       @param multicasts An array of references to the multicast addresses.
  */
-extern void ifnet_free_multicast_list(ifmultiaddr_t *multicasts)
-__NKE_API_DEPRECATED;
+extern void ifnet_free_multicast_list(ifmultiaddr_t *multicasts);
 
 /*!
  *       @function ifnet_find_by_name
@@ -1716,8 +1650,7 @@ __NKE_API_DEPRECATED;
  *               filled in if a matching interface is found.
  *       @result 0 on success otherwise the errno error.
  */
-extern errno_t ifnet_find_by_name(const char *ifname, ifnet_t *interface)
-__NKE_API_DEPRECATED;
+extern errno_t ifnet_find_by_name(const char *ifname, ifnet_t *interface);
 
 /*!
  *       @function ifnet_list_get
@@ -1734,8 +1667,7 @@ __NKE_API_DEPRECATED;
  *       @result 0 on success otherwise the errno error.
  */
 extern errno_t ifnet_list_get(ifnet_family_t family, ifnet_t **interfaces,
-    u_int32_t *count)
-__NKE_API_DEPRECATED;
+    u_int32_t *count);
 
 
 /*!
@@ -1747,8 +1679,7 @@ __NKE_API_DEPRECATED;
  *               ifnet_list_free.
  *       @param interfaces An array of interface references from ifnet_list_get.
  */
-extern void ifnet_list_free(ifnet_t *interfaces)
-__NKE_API_DEPRECATED;
+extern void ifnet_list_free(ifnet_t *interfaces);
 
 /******************************************************************************/
 /* ifaddr_t accessors                                                         */
@@ -1761,8 +1692,7 @@ __NKE_API_DEPRECATED;
  *       @param ifaddr The interface address.
  *       @result 0 upon success
  */
-extern errno_t ifaddr_reference(ifaddr_t ifaddr)
-__NKE_API_DEPRECATED;
+extern errno_t ifaddr_reference(ifaddr_t ifaddr);
 
 /*!
  *       @function ifaddr_release
@@ -1771,8 +1701,7 @@ __NKE_API_DEPRECATED;
  *       @param ifaddr The interface address.
  *       @result 0 upon success
  */
-extern errno_t ifaddr_release(ifaddr_t ifaddr)
-__NKE_API_DEPRECATED;
+extern errno_t ifaddr_release(ifaddr_t ifaddr);
 
 /*!
  *       @function ifaddr_address
@@ -1783,8 +1712,7 @@ __NKE_API_DEPRECATED;
  *       @result 0 upon success
  */
 extern errno_t ifaddr_address(ifaddr_t ifaddr, struct sockaddr *out_addr,
-    u_int32_t addr_size)
-__NKE_API_DEPRECATED;
+    u_int32_t addr_size);
 
 /*!
  *       @function ifaddr_address
@@ -1792,8 +1720,7 @@ __NKE_API_DEPRECATED;
  *       @param ifaddr The interface address.
  *       @result 0 on failure, address family on success.
  */
-extern sa_family_t ifaddr_address_family(ifaddr_t ifaddr)
-__NKE_API_DEPRECATED;
+extern sa_family_t ifaddr_address_family(ifaddr_t ifaddr);
 
 /*!
  *       @function ifaddr_dstaddress
@@ -1804,8 +1731,7 @@ __NKE_API_DEPRECATED;
  *       @result 0 upon success
  */
 extern errno_t ifaddr_dstaddress(ifaddr_t ifaddr, struct sockaddr *out_dstaddr,
-    u_int32_t dstaddr_size)
-__NKE_API_DEPRECATED;
+    u_int32_t dstaddr_size);
 
 /*!
  *       @function ifaddr_netmask
@@ -1816,8 +1742,7 @@ __NKE_API_DEPRECATED;
  *       @result 0 upon success
  */
 extern errno_t ifaddr_netmask(ifaddr_t ifaddr, struct sockaddr *out_netmask,
-    u_int32_t netmask_size)
-__NKE_API_DEPRECATED;
+    u_int32_t netmask_size);
 
 /*!
  *       @function ifaddr_ifnet
@@ -1829,8 +1754,7 @@ __NKE_API_DEPRECATED;
  *       @param ifaddr The interface address.
  *       @result A reference to the interface the address is attached to.
  */
-extern ifnet_t ifaddr_ifnet(ifaddr_t ifaddr)
-__NKE_API_DEPRECATED;
+extern ifnet_t ifaddr_ifnet(ifaddr_t ifaddr);
 
 /*!
  *       @function ifaddr_withaddr
@@ -1840,8 +1764,7 @@ __NKE_API_DEPRECATED;
  *       @param address The address to search for.
  *       @result A reference to the interface address.
  */
-extern ifaddr_t ifaddr_withaddr(const struct sockaddr *address)
-__NKE_API_DEPRECATED;
+extern ifaddr_t ifaddr_withaddr(const struct sockaddr *address);
 
 /*!
  *       @function ifaddr_withdstaddr
@@ -1852,8 +1775,8 @@ __NKE_API_DEPRECATED;
  *       @param destination The destination to search for.
  *       @result A reference to the interface address.
  */
-extern ifaddr_t ifaddr_withdstaddr(const struct sockaddr *destination)
-__NKE_API_DEPRECATED;
+extern ifaddr_t ifaddr_withdstaddr(const struct sockaddr *destination);
+
 /*!
  *       @function ifaddr_withnet
  *       @discussion Returns an interface address for the interface with the
@@ -1863,8 +1786,7 @@ __NKE_API_DEPRECATED;
  *       @param net The network to search for.
  *       @result A reference to the interface address.
  */
-extern ifaddr_t ifaddr_withnet(const struct sockaddr *net)
-__NKE_API_DEPRECATED;
+extern ifaddr_t ifaddr_withnet(const struct sockaddr *net);
 
 /*!
  *       @function ifaddr_withroute
@@ -1878,8 +1800,7 @@ __NKE_API_DEPRECATED;
  *       @result A reference to the interface address.
  */
 extern ifaddr_t ifaddr_withroute(int flags, const struct sockaddr *destination,
-    const struct sockaddr *gateway)
-__NKE_API_DEPRECATED;
+    const struct sockaddr *gateway);
 
 /*!
  *       @function ifaddr_findbestforaddr
@@ -1892,8 +1813,7 @@ __NKE_API_DEPRECATED;
  *       @result A reference to the interface address.
  */
 extern ifaddr_t ifaddr_findbestforaddr(const struct sockaddr *addr,
-    ifnet_t interface)
-__NKE_API_DEPRECATED;
+    ifnet_t interface);
 
 /******************************************************************************/
 /* ifmultiaddr_t accessors                                                    */
@@ -1906,8 +1826,7 @@ __NKE_API_DEPRECATED;
  *       @param ifmaddr The interface multicast address.
  *       @result 0 on success. Only error will be EINVAL if ifmaddr is not valid.
  */
-extern errno_t ifmaddr_reference(ifmultiaddr_t ifmaddr)
-__NKE_API_DEPRECATED;
+extern errno_t ifmaddr_reference(ifmultiaddr_t ifmaddr);
 
 /*!
  *       @function ifmaddr_release
@@ -1918,8 +1837,7 @@ __NKE_API_DEPRECATED;
  *       @param ifmaddr The interface multicast address.
  *       @result 0 on success. Only error will be EINVAL if ifmaddr is not valid.
  */
-extern errno_t ifmaddr_release(ifmultiaddr_t ifmaddr)
-__NKE_API_DEPRECATED;
+extern errno_t ifmaddr_release(ifmultiaddr_t ifmaddr);
 
 /*!
  *       @function ifmaddr_address
@@ -1929,8 +1847,7 @@ __NKE_API_DEPRECATED;
  *       @result 0 on success.
  */
 extern errno_t ifmaddr_address(ifmultiaddr_t ifmaddr,
-    struct sockaddr *out_multicast, u_int32_t addr_size)
-__NKE_API_DEPRECATED;
+    struct sockaddr *out_multicast, u_int32_t addr_size);
 
 /*!
  *       @function ifmaddr_lladdress
@@ -1941,8 +1858,7 @@ __NKE_API_DEPRECATED;
  *       @result 0 on success.
  */
 extern errno_t ifmaddr_lladdress(ifmultiaddr_t ifmaddr,
-    struct sockaddr *out_link_layer_multicast, u_int32_t addr_size)
-__NKE_API_DEPRECATED;
+    struct sockaddr *out_link_layer_multicast, u_int32_t addr_size);
 
 /*!
  *       @function ifmaddr_ifnet
@@ -1955,8 +1871,7 @@ __NKE_API_DEPRECATED;
  *       @param ifmaddr The interface multicast address.
  *       @result A reference to the interface.
  */
-extern ifnet_t ifmaddr_ifnet(ifmultiaddr_t ifmaddr)
-__NKE_API_DEPRECATED;
+extern ifnet_t ifmaddr_ifnet(ifmultiaddr_t ifmaddr);
 
 
 __END_DECLS

@@ -1,11 +1,11 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E668BD5D-E1D6-3C21-BA7E-5C3A672A964E', 'x86_64: E668BD5D-E1D6-3C21-BA7E-5C3A672A964E' ]
+uuids:           [ 'x86_64: 74A3EC47-96F5-3851-A034-4452CEE6E063', 'x86_64: 74A3EC47-96F5-3851-A034-4452CEE6E063' ]
 platform:        zippered
 install-name:    '/usr/lib/swift/libswiftObjectiveC.dylib'
 current-version: 0
 swift-abi-version: 7
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ '$ld$install_name$os10.10$@rpath/libswiftObjectiveC.dylib', 
                        '$ld$install_name$os10.11$@rpath/libswiftObjectiveC.dylib', 
@@ -19,8 +19,6 @@ exports:
                        '_$s10ObjectiveC6NSZoneVMn', '_$s10ObjectiveC6NSZoneVN', '_$s10ObjectiveC8ObjCBoolV11descriptionSSvg', 
                        '_$s10ObjectiveC8ObjCBoolV11descriptionSSvpMV', '_$s10ObjectiveC8ObjCBoolV12customMirrors0E0Vvg', 
                        '_$s10ObjectiveC8ObjCBoolV12customMirrors0E0VvpMV', '_$s10ObjectiveC8ObjCBoolV14booleanLiteralACSb_tcfC', 
-                       '_$s10ObjectiveC8ObjCBoolV6_values4Int8VvM', '_$s10ObjectiveC8ObjCBoolV6_values4Int8Vvg', 
-                       '_$s10ObjectiveC8ObjCBoolV6_values4Int8VvpMV', '_$s10ObjectiveC8ObjCBoolV6_values4Int8Vvs', 
                        '_$s10ObjectiveC8ObjCBoolV9boolValueSbvg', '_$s10ObjectiveC8ObjCBoolV9boolValueSbvpMV', 
                        '_$s10ObjectiveC8ObjCBoolVMa', '_$s10ObjectiveC8ObjCBoolVMn', 
                        '_$s10ObjectiveC8ObjCBoolVN', '_$s10ObjectiveC8ObjCBoolVs17CustomReflectableAAMc', 

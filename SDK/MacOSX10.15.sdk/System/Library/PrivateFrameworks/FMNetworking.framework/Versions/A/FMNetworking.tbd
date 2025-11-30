@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DC603013-A044-322C-BF39-9439FB0DE5DD' ]
+uuids:           [ 'x86_64: 83F6619F-B41C-3BDF-9F2E-C01B7353460C' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/FMNetworking.framework/Versions/A/FMNetworking'
 swift-abi-version: 7
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ '_$s12FMNetworking0A10URLSessionMp', '_$s12FMNetworking0A10URLSessionTL', 
                        '_$s12FMNetworking0A16PreferenceDomainSSvau', '_$s12FMNetworking0A16PreferenceDomainSSvp', 

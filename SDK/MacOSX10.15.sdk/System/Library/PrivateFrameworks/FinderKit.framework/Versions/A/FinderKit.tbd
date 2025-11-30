@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 56547C0A-8C78-329B-9E5D-565CD7AD1ADB' ]
+uuids:           [ 'x86_64: DA60DF9F-2C06-32DC-A8C8-DBBE616DF498' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/FinderKit.framework/Versions/A/FinderKit'
 current-version: 0
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _FITagEditorDidEndEditingNotification, __FIAddNewTagsToSidebar, 
                        __FISetTagsForURL, __FITagCirclesImage, __FITagNamesFromTags, 

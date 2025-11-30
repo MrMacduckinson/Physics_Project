@@ -1,11 +1,11 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4EDF735E-2104-32AD-BE7B-B400ABFCF57C' ]
+uuids:           [ 'x86_64: B853D87C-BBFB-3E2B-B954-E99B6C6021B9' ]
 platform:        macosx
 install-name:    '/usr/lib/libpq.5.dylib'
 current-version: 5.6
 compatibility-version: 5
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _PQbackendPID, _PQbinaryTuples, _PQcancel, _PQclear, _PQclientEncoding, 
                        _PQcmdStatus, _PQcmdTuples, _PQconndefaults, _PQconnectPoll, 

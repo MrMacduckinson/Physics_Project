@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FB5E6A75-398E-38EF-8CB2-59F5BFE3034C', 'x86_64: FB5E6A75-398E-38EF-8CB2-59F5BFE3034C' ]
+uuids:           [ 'x86_64: 59E124FF-8F56-3028-9816-40699F152B3B', 'x86_64: 59E124FF-8F56-3028-9816-40699F152B3B' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib'
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CGLGetCurrentContext, _CGLSetCurrentContext, _glAccum, _glActiveShaderProgram, 
                        _glActiveStencilFaceEXT, _glActiveTexture, _glActiveTextureARB, 

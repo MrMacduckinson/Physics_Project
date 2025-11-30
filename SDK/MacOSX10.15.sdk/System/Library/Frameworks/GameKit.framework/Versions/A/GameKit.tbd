@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A08E3D5B-33E0-3D3B-987F-73C51976D266' ]
+uuids:           [ 'x86_64: E2DF54C1-AF95-3E6C-8FC9-3CF125C60260' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/GameKit.framework/Versions/A/GameKit'
-current-version: 665.26
-exports:
+current-version: 665.11.4
+exports:         
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/Frameworks/Cocoa.framework/Versions/A/Cocoa', 
                        '/System/Library/Frameworks/GameController.framework/Versions/A/GameController', 
@@ -21,10 +21,10 @@ exports:
                        _kGameKitGameKitVersionString ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 33BE428B-A35C-3673-81F8-0695BF5DDFA9', 'x86_64: 33BE428B-A35C-3673-81F8-0695BF5DDFA9' ]
+uuids:           [ 'x86_64: 6BCBBE30-8C4A-313B-AA52-1BE7CB6FE50C', 'x86_64: 6BCBBE30-8C4A-313B-AA52-1BE7CB6FE50C' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GameCenterFoundation.framework/Versions/A/GameCenterFoundation'
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _GKAbsoluteTimeAsWhenString, _GKAbsoluteTimeAsWhenStringWithOptions, 
                        _GKAcceptFriendRequestIDs, _GKAcceptGameInviteNotification, 
@@ -365,10 +365,10 @@ exports:
                        _GKStateMachine._validTransitions ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 17C74459-599A-37FE-9F52-9E2E1D0D10A3' ]
+uuids:           [ 'x86_64: 6210BBBC-7F98-30D3-83DC-00E18F959F9C' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/GameCenterUI.framework/Versions/A/GameCenterUI'
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _GKBubbleFlowTransitionPhaseName, _GKBubbleFlowTransitionTypeName, 
                        _GKBubbleTypeName, _GKCollectionColumnLayoutDividerKind, _GKCollectionLayoutTopHeaderKind, 
@@ -533,10 +533,10 @@ exports:
                        _UIContentUnavailableView._titleView ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8DFC8DED-EEC4-3D70-BF34-600D4AD2A50D', 'x86_64: 8DFC8DED-EEC4-3D70-BF34-600D4AD2A50D' ]
+uuids:           [ 'x86_64: 50AA1247-A3CB-3BBA-B180-2D7571D75117', 'x86_64: 50AA1247-A3CB-3BBA-B180-2D7571D75117' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GameCenterUICore.framework/Versions/A/GameCenterUICore'
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _GKIsAvatarEditingSupported, _GKIsVoiceoverEnabled, _GKRectDivideYIntoThreeConsumingMiddle, 
                        _GKRectEnforceMinimumHeight, _GKRectsCenterXInRect, _GKRectsCenterYInRect, 

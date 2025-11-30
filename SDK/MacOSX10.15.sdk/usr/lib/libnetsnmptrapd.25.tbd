@@ -1,11 +1,11 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 30A84839-7146-31B6-8BFA-3E665B1B4524' ]
+uuids:           [ 'x86_64: F9670628-6F75-3AED-B7BE-D9F675BC3B4D' ]
 platform:        macosx
 install-name:    '/usr/lib/libnetsnmptrapd.25.dylib'
 current-version: 26.2
 compatibility-version: 26
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _SyslogTrap, _axforward_handler, _command_handler, _dropauth, 
                        _exec_format1, _exec_format2, _forward_handler, _free_trap1_fmt, 

@@ -1,11 +1,11 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8549294E-4C53-36EB-99F3-584A7393D8D5', 'x86_64: 8549294E-4C53-36EB-99F3-584A7393D8D5' ]
+uuids:           [ 'x86_64: F82A587B-44A2-3699-A218-9D3ECEE23D5A', 'x86_64: F82A587B-44A2-3699-A218-9D3ECEE23D5A' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_malloc.dylib'
-current-version: 283.100.6
+current-version: 283.40.1
 parent-umbrella: System
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ ___mach_stack_logging_copy_uniquing_table, ___mach_stack_logging_enumerate_records, 
                        ___mach_stack_logging_frames_for_uniqued_stack, ___mach_stack_logging_get_frames, 

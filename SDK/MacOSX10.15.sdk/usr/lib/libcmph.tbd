@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E72A20DB-2E86-378D-A237-EB9A1370F989', 'x86_64: E72A20DB-2E86-378D-A237-EB9A1370F989' ]
+uuids:           [ 'x86_64: 49C8E101-945E-369B-91D3-2129000DFF35', 'x86_64: 49C8E101-945E-369B-91D3-2129000DFF35' ]
 platform:        zippered
 install-name:    '/usr/lib/libcmph.dylib'
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _cmph_config_destroy, _cmph_config_new, _cmph_config_set_algo, 
                        _cmph_config_set_b, _cmph_config_set_graphsize, _cmph_config_set_hashfuncs, 

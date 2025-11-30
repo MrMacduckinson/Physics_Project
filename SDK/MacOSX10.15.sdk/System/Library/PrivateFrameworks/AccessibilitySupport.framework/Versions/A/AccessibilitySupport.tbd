@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B731A472-2106-3867-9B69-9F9B8466419E' ]
+uuids:           [ 'x86_64: 4CF46106-48AB-3CD5-B00A-0170CE4207C8' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/AccessibilitySupport'
 current-version: 2
-exports:
+exports:         
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/Frameworks/AccessibilityEvents.framework/Versions/A/AccessibilityEvents', 
                        '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/Frameworks/AccessibilityFoundation.framework/Versions/A/AccessibilityFoundation', 
@@ -13,11 +13,11 @@ exports:
     symbols:         [ _AccessibilitySupportVersionNumber, _AccessibilitySupportVersionString ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 765CC3DA-1D7B-345E-823A-C2DE9E638287' ]
+uuids:           [ 'x86_64: CD6363D7-8C3A-3503-A49F-E0FD51CBE5CA' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/Frameworks/AccessibilityEvents.framework/Versions/A/AccessibilityEvents'
 current-version: 2
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AXEFixedGlyphForMacKeyCode, _AXEGlyphForMacKeyCode, _AXEGlyphForPureModifierFlags, 
                        _AXEHIDDeviceGetDeviceInfo, _AXEHIDDeviceGetDeviceInfoUsingCache, 
@@ -50,11 +50,11 @@ exports:
                        _AXETrackingStabilizingTouchHistory ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EC1F2EDD-EE33-3E68-B40B-CF303FA5805F' ]
+uuids:           [ 'x86_64: 8B52D6AC-BCE1-307A-AC58-9B4A59443629' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/Frameworks/AccessibilityFoundation.framework/Versions/A/AccessibilityFoundation'
 current-version: 2
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AXEGetLog, _AXFAnnouncementRequestedNotification, _AXFApplicationActivatedNotification, 
                        _AXFApplicationDeactivatedNotification, _AXFApplicationHiddenNotification, 
@@ -158,11 +158,11 @@ exports:
     objc-ivars:      [ _AXFFaultingArray._elements ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C8542A59-0421-3B75-9DFC-C5C126E1E406' ]
+uuids:           [ 'x86_64: 661020C7-2CBA-3CEC-8070-38E19C350A64' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/Frameworks/AccessibilityKit.framework/Versions/A/AccessibilityKit'
 current-version: 2
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AXKContrastRatioForColor, _AXKDebugPrintHierarchy, _AXKHsv2rgb, 
                        _AXKRecommendedColorForColors, _AXKRgb2hsv, _AXKThreadingCheckAssertCurrentQueueIsAppQueueForElement, 
@@ -192,11 +192,11 @@ exports:
                        _AXKElementCacheValue, _AXKKeyboardFocusListenerWrapper, _AXKTextElementEditListenerWrapper ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7FC4A9ED-FE33-300E-BEF2-F233CE4FDA90' ]
+uuids:           [ 'x86_64: BEC9812D-5DF3-33BF-ABEB-50E1D3FE9475' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/Frameworks/AccessibilityVisuals.framework/Versions/A/AccessibilityVisuals'
 current-version: 2
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AXVAccessibilityVisualsSpaceUUID, _AXVAdjustedHSBColor, _AXVApproximateCharactersToShowInMenu, 
                        _AXVBrailleSpace, _AXVBrailleTransliterationAttribute, _AXVBrailleWindowLevel, 

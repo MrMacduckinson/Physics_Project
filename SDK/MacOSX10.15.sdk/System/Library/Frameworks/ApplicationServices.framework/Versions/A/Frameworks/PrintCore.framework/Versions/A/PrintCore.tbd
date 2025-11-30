@@ -1,11 +1,11 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 437BCF12-48D2-3770-8BC9-567718FB1BCA' ]
+uuids:           [ 'x86_64: 78F4A9D5-82F5-3578-A78F-CDD438DB6A6C' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore'
-current-version: 516.2
+current-version: 516
 parent-umbrella: ApplicationServices
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CPLAutoSelectCancel, _CPLAutoSelectCreateContext, _CPLAutoSelectGetInfo, 
                        _CPLAutoSelectHasNewPPD, _CPLAutoSelectInstallableOptions, 

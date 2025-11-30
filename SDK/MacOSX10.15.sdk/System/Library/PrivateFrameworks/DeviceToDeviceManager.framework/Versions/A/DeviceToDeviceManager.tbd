@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C2560F5C-4A3F-3649-AAE1-0A6177A4C4FA', 'x86_64: C2560F5C-4A3F-3649-AAE1-0A6177A4C4FA' ]
+uuids:           [ 'x86_64: CD09E79D-7C5D-3D03-BA7F-67A3E7834974', 'x86_64: CD09E79D-7C5D-3D03-BA7F-67A3E7834974' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DeviceToDeviceManager.framework/Versions/A/DeviceToDeviceManager'
 current-version: 38
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _D2DInitialize, _D2DRelease, _D2DRetain, _D2DStartAdvertisingPair, 
                        _D2DStartAdvertisingPairOnTransport, _D2DStartBrowsingForKey, 

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DA312218-35EF-3A30-917A-4405CCF52546', 'x86_64: DA312218-35EF-3A30-917A-4405CCF52546' ]
+uuids:           [ 'x86_64: 559522B7-6BF3-34DE-80AF-017674B1274B', 'x86_64: 559522B7-6BF3-34DE-80AF-017674B1274B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/EasyConfig.framework/Versions/A/EasyConfig'
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _EasyConfigCreateDictionaryFromTLV, _EasyConfigCreateTLVfromDictionary, 
                        _EasyConfigDeviceProgressNotification, _EasyConfigDeviceStoppedNotification, 

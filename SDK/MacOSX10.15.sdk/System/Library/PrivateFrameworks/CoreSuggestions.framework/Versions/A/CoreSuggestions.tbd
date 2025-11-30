@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6F34A41F-04D1-35A5-8EBC-D5EBC2BCB3D6', 'x86_64: 6F34A41F-04D1-35A5-8EBC-D5EBC2BCB3D6' ]
+uuids:           [ 'x86_64: F5239315-3396-3DA0-8C62-4EC14F8ADA99', 'x86_64: F5239315-3396-3DA0-8C62-4EC14F8ADA99' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreSuggestions.framework/Versions/A/CoreSuggestions'
-current-version: 1052.34
-exports:
+current-version: 1052.14
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CoreSuggestionsVersionNumber, _CoreSuggestionsVersionString, 
                        _SGBundleIdentifierAddressBook, _SGBundleIdentifierCalendar, 

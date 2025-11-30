@@ -3,7 +3,7 @@
  
     Framework:  AVFoundation
  
-    Copyright 2012-2019 Apple Inc. All rights reserved.
+    Copyright 2012-2017 Apple Inc. All rights reserved.
 */
 
 #import <AVFoundation/AVBase.h>
@@ -86,7 +86,6 @@ AV_INIT_UNAVAILABLE
 @property(readonly) AVMetadataObjectType type;
 
 @end
-
 
 #pragma mark - AVMetadataBodyObject
 
@@ -235,7 +234,6 @@ API_AVAILABLE(macos(10.15), ios(13.0)) API_UNAVAILABLE(tvos, watchos)
 @property(readonly) NSInteger objectID;
 
 @end
-
 
 /*!
  @constant AVMetadataObjectTypeFace

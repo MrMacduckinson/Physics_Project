@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F8FB1DDC-1579-330A-9470-F943CC051E36' ]
+uuids:           [ 'x86_64: 552E7579-B68B-3974-A040-9BE80536FB33' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/WiFiCloudSyncEngine.framework/Versions/A/WiFiCloudSyncEngine'
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _WiFiCloudSyncEngineAddNetworkToCloud, _WiFiCloudSyncEngineAddNetworkToKnownNetworksList, 
                        _WiFiCloudSyncEngineCheckKeychainSyncState, _WiFiCloudSyncEngineCreate, 

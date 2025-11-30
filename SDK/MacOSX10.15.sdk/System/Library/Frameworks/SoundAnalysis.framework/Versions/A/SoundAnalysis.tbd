@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 334A5E2D-7DD0-33EA-88FB-2C519BA529C4', 'x86_64: 334A5E2D-7DD0-33EA-88FB-2C519BA529C4' ]
+uuids:           [ 'x86_64: F39BC672-F7E7-3BFB-9FCD-DAA086352439', 'x86_64: F39BC672-F7E7-3BFB-9FCD-DAA086352439' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/SoundAnalysis.framework/Versions/A/SoundAnalysis'
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _SNErrorDomain, _SNSoundIdentifierApplause, _SNSoundIdentifierBabble, 
                        _SNSoundIdentifierCheering, _SNSoundIdentifierDistressedBaby, 

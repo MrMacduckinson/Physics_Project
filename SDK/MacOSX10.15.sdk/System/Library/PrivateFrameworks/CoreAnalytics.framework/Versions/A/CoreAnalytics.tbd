@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E6E3B6EA-A2BE-3752-B06D-BECCBA4E85B2', 'x86_64: E6E3B6EA-A2BE-3752-B06D-BECCBA4E85B2' ]
+uuids:           [ 'x86_64: CFAD97DE-F4F0-3A1B-B6FE-855164CC68CC', 'x86_64: CFAD97DE-F4F0-3A1B-B6FE-855164CC68CC' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreAnalytics.framework/Versions/A/CoreAnalytics'
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AnalyticsIsEventUsed, _AnalyticsSendEvent, _AnalyticsSendEventLazy, 
                        _AnalyticsSetCallbackForQueriedEvent, _AnalyticsSetCallbackForQueriedEventWithQueue, 
@@ -18,7 +18,7 @@ exports:
                        __Z32analytics_tool_transform_persistNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
                        __Z33analytics_tool_config_set_taskingNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
                        __Z33analytics_tool_get_queried_eventsv, __Z37analytics_tool_is_event_used_check_dbNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
-                       __Z38analytics_tool_config_set_reboot_clearb, __Z40analytics_tool_config_set_tasking_ndjsonN10applesauce3xpc6objectE, 
+                       __Z40analytics_tool_config_set_tasking_ndjsonN10applesauce3xpc6objectE, 
                        __ZN13CoreAnalytics13EventObserverD0Ev, __ZN13CoreAnalytics13EventObserverD1Ev, 
                        __ZN13CoreAnalytics13EventObserverD2Ev, __ZN13CoreAnalytics21ConfigurationObserverD0Ev, 
                        __ZN13CoreAnalytics21ConfigurationObserverD1Ev, __ZN13CoreAnalytics21ConfigurationObserverD2Ev, 
@@ -50,9 +50,8 @@ exports:
                        __ZTIN13CoreAnalytics13EventObserverE, __ZTIN13CoreAnalytics21ConfigurationObserverE, 
                        __ZTSN13CoreAnalytics13EventObserverE, __ZTSN13CoreAnalytics21ConfigurationObserverE, 
                        __ZTVN13CoreAnalytics13EventObserverE, __ZTVN13CoreAnalytics21ConfigurationObserverE, 
-                       _ad_addScalarForKey, _analytics_cancel_queried_awd_metric, 
-                       _analytics_is_awd_metric_enabled, _analytics_is_event_used, 
-                       _analytics_mark_awd_queriable, _analytics_send_awd_metric, 
+                       _analytics_cancel_queried_awd_metric, _analytics_is_awd_metric_enabled, 
+                       _analytics_is_event_used, _analytics_mark_awd_queriable, _analytics_send_awd_metric, 
                        _analytics_send_awd_trigger, _analytics_send_event, _analytics_send_event_lazy, 
                        _analytics_send_queried_awd_metric, _analytics_send_queried_awd_trigger, 
                        _analytics_set_awd_query_callback, _analytics_set_callback_for_queried_event, 

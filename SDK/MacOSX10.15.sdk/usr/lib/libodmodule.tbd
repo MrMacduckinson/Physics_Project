@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 68A107FF-6A99-302C-88DD-79640EB8AC66' ]
+uuids:           [ 'x86_64: 7387B47E-082C-3321-A495-79C8CA42AB96' ]
 platform:        macosx
 install-name:    '/usr/lib/libodmodule.dylib'
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CFArrayAppendServer, _ODModuleMsgKeyAccountName, _ODModuleMsgKeyAdditionalInfo, 
                        _ODModuleMsgKeyAuthInformationType, _ODModuleMsgKeyConnectionFlags, 

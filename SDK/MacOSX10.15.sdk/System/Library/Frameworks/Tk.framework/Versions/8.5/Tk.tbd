@@ -1,11 +1,11 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D47832BC-9286-329E-9651-6D7582819029' ]
+uuids:           [ 'x86_64: 480800CB-C0E9-360E-B7A6-7FAABD07FA3F' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Tk.framework/Versions/8.5/Tk'
 current-version: 8.5.9
 compatibility-version: 8.5
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _TkAboutDlg, _TkAllocWindow, _TkBezierPoints, _TkBezierScreenPoints, 
                        _TkBindDeadWindow, _TkBindEventProc, _TkBindFree, _TkBindInit, 

@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7FC4A9ED-FE33-300E-BEF2-F233CE4FDA90' ]
+uuids:           [ 'x86_64: BEC9812D-5DF3-33BF-ABEB-50E1D3FE9475' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/Frameworks/AccessibilityVisuals.framework/Versions/A/AccessibilityVisuals'
 current-version: 2
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AXVAccessibilityVisualsSpaceUUID, _AXVAdjustedHSBColor, _AXVApproximateCharactersToShowInMenu, 
                        _AXVBrailleSpace, _AXVBrailleTransliterationAttribute, _AXVBrailleWindowLevel, 

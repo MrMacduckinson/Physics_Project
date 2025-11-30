@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 70F16562-E0B4-3A4F-B303-0CB0BE92F717' ]
+uuids:           [ 'x86_64: 75B5B307-1905-3CC8-99F3-57808328A6EE' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/IMDPersistence.framework/Versions/A/IMDPersistence'
 current-version: 800
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CSDBSharedRecordStore, _IMAttachmentClassGIFOrSticker, _IMAttachmentClassOther, 
                        _IMAttachmentClassPhoto, _IMAttachmentClassVideo, _IMCopyIndexableChatDictionaryForRecordRef, 
@@ -74,16 +74,16 @@ exports:
                        _IMDChatRecordRemoveHandle, _IMDChatRecordRemoveMessage, _IMDChatRecordRepairDuplicateChats, 
                        _IMDChatRecordSetIsArchived, _IMDChatRecordSetIsBlackholed, 
                        _IMDChatRecordSetIsFiltered, _IMDChatRemapChatsWithLastAddressedSIMIDToNewLastAddressedIDs, 
-                       _IMDChatRemapMessagesWithErrorCodeToErrorCode, _IMDChatRowIDsMostRecentByLastMessageWithLimit, 
-                       _IMDCleanseBrowserSnapshots, _IMDCleanseOrphanedAttachments, 
-                       _IMDCleanseOrphanedStickerAttachments, _IMDConfirmIndexesCreatedAsExpected, 
-                       _IMDConfirmTablesCreatedAsExpected, _IMDCopyAttachmentPersistentPath, 
-                       _IMDCopyGUIDForImportedChat, _IMDCopyGUIDForImportedOneToOneChat, 
-                       _IMDCoreSpotlightAddMessageGUID, _IMDCoreSpotlightBalloonPluginIndexer_TestDescription, 
-                       _IMDCoreSpotlightDeleteChatGUID, _IMDCoreSpotlightDeleteCoreRecentsWithHandles, 
-                       _IMDCoreSpotlightDeleteMessageGUIDS, _IMDCoreSpotlightGetPerChatHistoryLimit, 
-                       _IMDCoreSpotlightIndexNextMessageBatchIfNeeded, _IMDCoreSpotlightIndexQueue, 
-                       _IMDCoreSpotlightMarkAttachment, _IMDCoreSpotlightMessageAttachmentIndexer_TestAttachmentPath, 
+                       _IMDChatRowIDsMostRecentByLastMessageWithLimit, _IMDCleanseBrowserSnapshots, 
+                       _IMDCleanseOrphanedAttachments, _IMDCleanseOrphanedStickerAttachments, 
+                       _IMDConfirmIndexesCreatedAsExpected, _IMDConfirmTablesCreatedAsExpected, 
+                       _IMDCopyAttachmentPersistentPath, _IMDCopyGUIDForImportedChat, 
+                       _IMDCopyGUIDForImportedOneToOneChat, _IMDCoreSpotlightAddMessageGUID, 
+                       _IMDCoreSpotlightBalloonPluginIndexer_TestDescription, _IMDCoreSpotlightDeleteChatGUID, 
+                       _IMDCoreSpotlightDeleteCoreRecentsWithHandles, _IMDCoreSpotlightDeleteMessageGUIDS, 
+                       _IMDCoreSpotlightGetPerChatHistoryLimit, _IMDCoreSpotlightIndexNextMessageBatchIfNeeded, 
+                       _IMDCoreSpotlightIndexQueue, _IMDCoreSpotlightMarkAttachment, 
+                       _IMDCoreSpotlightMessageAttachmentIndexer_TestAttachmentPath, 
                        _IMDCoreSpotlightMessageAttachmentIndexer_TestAttachmentRecord, 
                        _IMDCoreSpotlightMessageAttachmentIndexer_TestAttachments, 
                        _IMDCoreSpotlightMessageAttachmentIndexer_TestOverrideIsSticker, 
@@ -139,8 +139,8 @@ exports:
                        _IMDMessageRecordCopyAttachments, _IMDMessageRecordCopyAttachmentsForIDWithLock, 
                        _IMDMessageRecordCopyChats, _IMDMessageRecordCopyChatsForMessageIdentifier, 
                        _IMDMessageRecordCopyExpiringOrExpiredMessages, _IMDMessageRecordCopyFrequentRepliesForChatIdentifiersOnServicesUpToLimit, 
-                       _IMDMessageRecordCopyGUID, _IMDMessageRecordCopyGUIDForMessage, 
-                       _IMDMessageRecordCopyGUIDUnlocked, _IMDMessageRecordCopyGUIDsForMessagesWithChatIdentifiersOnServices, 
+                       _IMDMessageRecordCopyGUID, _IMDMessageRecordCopyGUIDUnlocked, 
+                       _IMDMessageRecordCopyGUIDsForMessagesWithChatIdentifiersOnServices, 
                        _IMDMessageRecordCopyGUIDsMarkingMessagesAsReadWithChatIdentifiersOnServicesUpToGUIDFromMe, 
                        _IMDMessageRecordCopyGUIDsMarkingMessagesAsReadWithHandlesOnServicesUpToGUIDFromMe, 
                        _IMDMessageRecordCopyGUIDsMarkingMessagesAsReadWithRoomnamesOnServicesUpToGUIDFromMe, 

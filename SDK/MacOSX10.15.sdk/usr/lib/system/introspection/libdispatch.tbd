@@ -1,11 +1,11 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 77B4193F-9A40-308E-9A99-05C111362780', 'x86_64: 77B4193F-9A40-308E-9A99-05C111362780' ]
+uuids:           [ 'x86_64: 96FA2C2E-B8F6-3EC9-8A3C-082E7DA39529', 'x86_64: 96FA2C2E-B8F6-3EC9-8A3C-082E7DA39529' ]
 platform:        zippered
 install-name:    '/usr/lib/system/introspection/libdispatch.dylib'
-current-version: 1173.100.2
+current-version: 1173.40.5
 parent-umbrella: System
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ '$ld$hide$os10.12$_dispatch_assert_queue', '$ld$hide$os10.12$_dispatch_assert_queue_not', 
                        '$ld$hide$os10.12$_dispatch_queue_create_with_target', __dispatch_begin_NSAutoReleasePool, 

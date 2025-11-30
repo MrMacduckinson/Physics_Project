@@ -1,6 +1,6 @@
-/* iig(DriverKit-73.140.1) generated from IOUserServer.iig */
+/* iig(DriverKit-73.40.3) generated from IOUserServer.iig */
 
-/* IOUserServer.iig:1-36 */
+/* IOUserServer.iig:1-42 */
 /*
  * Copyright (c) 2019-2019 Apple Inc. All rights reserved.
  *
@@ -37,41 +37,13 @@
 #include <DriverKit/IOService.h>  /* .iig include */
 
 
-/* source class IOUserServer IOUserServer.iig:37-63 */
-
-#if __DOCUMENTATION__
-#define KERNEL IIG_KERNEL
-
 /*!
+@iig implementation
+#include <IOKit/IOUserServer.h>
+@iig end
 */
 
-class KERNEL IOUserServer : public IOService
-{
-public:
-	static kern_return_t
-	Create(
-		const char      name[64],
-		uint64_t        tag,
-		uint64_t        options,
-		IOUserServer ** server);
-
-	virtual bool
-	init() override;
-
-	virtual void
-	free() override;
-
-	virtual kern_return_t
-	Exit(const char reason[1024]) LOCAL;
-
-	virtual kern_return_t
-	LoadModule(const char path[1024]) LOCAL;
-};
-
-#undef KERNEL
-#else /* __DOCUMENTATION__ */
-
-/* generated class IOUserServer IOUserServer.iig:37-63 */
+/* class IOUserServer IOUserServer.iig:43-63 */
 
 #define IOUserServer_Create_ID            0xc1dbaee5e75e22b9ULL
 #define IOUserServer_Exit_ID            0xe949d58832ebe980ULL
@@ -174,9 +146,6 @@ public:\
 
 
 
-
-
-#endif /* !__DOCUMENTATION__ */
 
 /* IOUserServer.iig:65- */
 

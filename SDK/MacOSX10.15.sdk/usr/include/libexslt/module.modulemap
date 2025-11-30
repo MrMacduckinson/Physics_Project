@@ -1,5 +1,5 @@
 module libexslt [system] [extern_c] {
-    link "exslt"
+    // Add "-Xcc -I$(SDKROOT)/usr/include/libxml2 -Xcc -I$(SDKROOT)/usr/include/libexslt" to OTHER_SWIFT_FLAGS in Xcode project.
 
     module exslt {
         header "exslt.h"

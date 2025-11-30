@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C68367BA-2225-31DD-B2D8-16AC0A44421F', 'x86_64: C68367BA-2225-31DD-B2D8-16AC0A44421F' ]
+uuids:           [ 'x86_64: 51B9680F-41CE-394E-A600-1B5B0EC8D52B', 'x86_64: 51B9680F-41CE-394E-A600-1B5B0EC8D52B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/login.framework/Versions/A/login'
-exports:
+exports:         
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/PrivateFrameworks/login.framework/Versions/A/Frameworks/loginsupport.framework/Versions/A/loginsupport' ]
     symbols:         [ _CreateSessionOwnerConnection, _JoinAuditSessionIfNeeded, 
@@ -94,10 +94,10 @@ exports:
                        LFSessionAgentMessageHandler._miniBuddyCompletionBlockQueue ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 12F77885-27DC-3837-9CE9-A25EBA75F833', 'x86_64: 12F77885-27DC-3837-9CE9-A25EBA75F833' ]
+uuids:           [ 'x86_64: FFE90A0A-BEBC-3032-9368-94C016BE0795', 'x86_64: FFE90A0A-BEBC-3032-9368-94C016BE0795' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/login.framework/Versions/A/Frameworks/loginsupport.framework/Versions/A/loginsupport'
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _DBLoggerMaxFlag, _DBLoggerStartFlag, _DBLoggingGetMaskForController, 
                        _DBLoggingLogWithFormat, _DBLoggingSetLogFileForController, 

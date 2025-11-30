@@ -1,11 +1,11 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F61A42F0-3B6C-32DC-A6E3-5D233B9CD14D' ]
+uuids:           [ 'x86_64: C2DDDD4E-B757-3F62-96F8-6EB894A2CF91' ]
 platform:        macosx
 install-name:    '/usr/lib/swift/libswiftSceneKit.dylib'
 current-version: 0
 swift-abi-version: 7
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ '$ld$install_name$os10.10$@rpath/libswiftSceneKit.dylib', 
                        '$ld$install_name$os10.11$@rpath/libswiftSceneKit.dylib', 

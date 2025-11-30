@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 21E0DCF2-0B67-3E0C-8D4E-3A81CAB1964E', 'x86_64: 21E0DCF2-0B67-3E0C-8D4E-3A81CAB1964E' ]
+uuids:           [ 'x86_64: D1BC6DFA-3AF3-3E4E-AA8E-3957FC255A08', 'x86_64: D1BC6DFA-3AF3-3E4E-AA8E-3957FC255A08' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/iCalendar.framework/Versions/A/iCalendar'
-current-version: 810.6.1
-exports:
+current-version: 810.2.2
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ICSAppendEmoji, _ICSDecodeBase64, _ICSEncodeBase64, _ICSRedactString, 
                        _ICSTravelAdvisoryBehavior_Automatic, _ICSTravelAdvisoryBehavior_Disabled, 

@@ -1,13 +1,12 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9B87C589-EAB4-3636-B9A8-26D9231F379E', 'x86_64: 9B87C589-EAB4-3636-B9A8-26D9231F379E' ]
+uuids:           [ 'x86_64: 19ACBC89-6DD3-373C-874E-47D92777E731', 'x86_64: 19ACBC89-6DD3-373C-874E-47D92777E731' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/EmailCore.framework/Versions/A/EmailCore'
-current-version: 3608.120.23
-exports:
+current-version: 3601.0.10
+exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _ECAccountCacheKeyEnabled, _ECAccountCacheKeyParentAccount, 
-                       _ECAccountSchemeDataAccess, _ECAccountSchemeEWS, _ECAccountSchemeIMAP, 
+    symbols:         [ _ECAccountSchemeDataAccess, _ECAccountSchemeEWS, _ECAccountSchemeIMAP, 
                        _ECAccountSchemeLocal, _ECAccountSchemePOP, _ECAllowNetworkActivityButLog, 
                        _ECAssertNetworkActivityAllowed, _ECAuthSchemeAPOP, _ECAuthSchemeAppleToken, 
                        _ECAuthSchemeClearText, _ECAuthSchemeCramMD5, _ECAuthSchemeDigestMD5, 
@@ -41,13 +40,14 @@ exports:
                        _ECMailDataclassPropertyIgnoreServerDefinedJunkMailbox, _ECMailDataclassPropertyIgnoreServerDefinedSentMailbox, 
                        _ECMailDataclassPropertyIgnoreServerDefinedTrashMailbox, _ECMailDataclassPropertyInboxMailboxName, 
                        _ECMailDataclassPropertyJournalMailboxName, _ECMailDataclassPropertyJunkMailboxName, 
-                       _ECMailDataclassPropertyNeedsGmailLabelsCleanup, _ECMailDataclassPropertyNotesMailboxName, 
-                       _ECMailDataclassPropertyNumberOfDaysToKeepJunk, _ECMailDataclassPropertyNumberOfDaysToKeepTrash, 
-                       _ECMailDataclassPropertyOutboxMailboxName, _ECMailDataclassPropertyQueriedUserToSetPathPrefix, 
-                       _ECMailDataclassPropertySentMessagesMailboxName, _ECMailDataclassPropertyShouldUseGmailLabelStores, 
-                       _ECMailDataclassPropertyToDosMailboxName, _ECMailDataclassPropertyTrashMailboxName, 
-                       _ECMessageHeaderKeyAttachments, _ECMessageHeaderKeyAutoSubmitted, 
-                       _ECMessageHeaderKeyBCC, _ECMessageHeaderKeyCC, _ECMessageHeaderKeyContentDescription, 
+                       _ECMailDataclassPropertyLastSyncDate, _ECMailDataclassPropertyNeedsGmailLabelsCleanup, 
+                       _ECMailDataclassPropertyNotesMailboxName, _ECMailDataclassPropertyNumberOfDaysToKeepJunk, 
+                       _ECMailDataclassPropertyNumberOfDaysToKeepTrash, _ECMailDataclassPropertyOutboxMailboxName, 
+                       _ECMailDataclassPropertyQueriedUserToSetPathPrefix, _ECMailDataclassPropertySentMessagesMailboxName, 
+                       _ECMailDataclassPropertyShouldUseGmailLabelStores, _ECMailDataclassPropertyToDosMailboxName, 
+                       _ECMailDataclassPropertyTrashMailboxName, _ECMessageHeaderKeyAttachments, 
+                       _ECMessageHeaderKeyAutoSubmitted, _ECMessageHeaderKeyBCC, 
+                       _ECMessageHeaderKeyCC, _ECMessageHeaderKeyContentDescription, 
                        _ECMessageHeaderKeyContentDisposition, _ECMessageHeaderKeyContentID, 
                        _ECMessageHeaderKeyContentLanguage, _ECMessageHeaderKeyContentLocation, 
                        _ECMessageHeaderKeyContentTransferEncoding, _ECMessageHeaderKeyContentType, 
@@ -62,13 +62,13 @@ exports:
                        _ECMessageHeaderKeyUserAgent, _ECMessageHeaderKeyXAppleUnsubscribe, 
                        _ECMessageHeaderKeyXMailer, _ECMessageHeaderKeyXNotifyThread, 
                        _ECMessageHeaderKeyXPriority, _ECMessageHeaderKeyXSMIMEEncrypt, 
-                       _ECMessageHeaderKeyXSMIMEOriginalMessageEncrypted, _ECMessageHeaderKeyXUniversallyUniqueIdentifier, 
-                       _ECMessagePropertyNumberOfAttachments, _ECMessagePropertySummary, 
-                       _ECNSStringFromMailboxMailboxType, _ECNetworkAllowedLog, _ECSASLMechanismAppleToken, 
-                       _ECSASLMechanismCramMD5, _ECSASLMechanismDigestMD5, _ECSASLMechanismExternal, 
-                       _ECSASLMechanismGSSAPI, _ECSASLMechanismLogin, _ECSASLMechanismNTLM, 
-                       _ECSASLMechanismOAuth2, _ECSASLMechanismPlain, _ECSASLMechanismPlainClientToken, 
-                       _ECWhiteMailboxNameGmail, _ECWhiteMailboxNameGoogleMail, _ECWhiteMailboxNameGoogleSpaceMail, 
+                       _ECMessageHeaderKeyXUniversallyUniqueIdentifier, _ECMessagePropertyNumberOfAttachments, 
+                       _ECMessagePropertySummary, _ECNSStringFromMailboxMailboxType, 
+                       _ECNetworkAllowedLog, _ECSASLMechanismAppleToken, _ECSASLMechanismCramMD5, 
+                       _ECSASLMechanismDigestMD5, _ECSASLMechanismExternal, _ECSASLMechanismGSSAPI, 
+                       _ECSASLMechanismLogin, _ECSASLMechanismNTLM, _ECSASLMechanismOAuth2, 
+                       _ECSASLMechanismPlain, _ECSASLMechanismPlainClientToken, _ECWhiteMailboxNameGmail, 
+                       _ECWhiteMailboxNameGoogleMail, _ECWhiteMailboxNameGoogleSpaceMail, 
                        __ECBeginAllowingMainThreadNetworking, __ECEndAllowingMainThreadNetworking, 
                        __ECIsNetworkActivityAllowed ]
     objc-classes:    [ ECAPOPAuthScheme, ECAccount, ECAccountFactory, ECAccountsObserver, 

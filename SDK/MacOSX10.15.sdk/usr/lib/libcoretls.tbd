@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 770A5B96-936E-34E3-B006-B1CEC299B5A5', 'x86_64: 770A5B96-936E-34E3-B006-B1CEC299B5A5' ]
+uuids:           [ 'x86_64: 4F054E37-783A-3FCD-B90B-23A0A83621D9', 'x86_64: 4F054E37-783A-3FCD-B90B-23A0A83621D9' ]
 platform:        zippered
 install-name:    '/usr/lib/libcoretls.dylib'
 current-version: 167
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CipherSuiteCount, _CurvesCount, _KnownCipherSuites, _KnownCurves, 
                        _KnownSigAlgs, _SigAlgsCount, _Ssl3Callouts, _Tls12Callouts, 

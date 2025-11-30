@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 70B1521B-1B24-3DA4-A41B-E727CF140F1F', 'x86_64: 70B1521B-1B24-3DA4-A41B-E727CF140F1F' ]
+uuids:           [ 'x86_64: 532E3F4F-371A-3A96-B3B7-115156E39213', 'x86_64: 532E3F4F-371A-3A96-B3B7-115156E39213' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Espresso.framework/Versions/A/Espresso'
 current-version: 0
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ETCallbackTypeBatch, _ETCallbackTypeEpoch, __Z13global_loggerv, 
                        __Z23espresso_vision_computeP15EspressoNetworkP15EspressoContextPK13vImage_BufferiPfPK12VimageParamsbii, 
@@ -1310,11 +1310,11 @@ exports:
                        __ZTVN8Espresso41generic_inner_product_weights_grad_kernelE, 
                        __ZTVN8Espresso4passE, __ZTVN8Espresso5layerE, __ZTVN8Espresso6SerDes13layer_io_baseE, 
                        __ZTVN8Espresso6SerDes21generic_serdes_objectE, __ZTVN8Espresso8net_passE, 
-                       __ZThn208_N8Espresso20generic_cf_if_kernelD0Ev, __ZThn208_N8Espresso20generic_cf_if_kernelD1Ev, 
-                       __ZThn208_N8Espresso21generic_cf_for_kernelD0Ev, __ZThn208_N8Espresso21generic_cf_for_kernelD1Ev, 
-                       __ZThn208_N8Espresso22generic_cf_else_kernelD0Ev, __ZThn208_N8Espresso22generic_cf_else_kernelD1Ev, 
-                       __ZThn208_N8Espresso22generic_cf_jump_kernelD0Ev, __ZThn208_N8Espresso22generic_cf_jump_kernelD1Ev, 
-                       __ZThn208_N8Espresso22generic_cf_loop_kernelD0Ev, __ZThn208_N8Espresso22generic_cf_loop_kernelD1Ev, 
+                       __ZThn200_N8Espresso20generic_cf_if_kernelD0Ev, __ZThn200_N8Espresso20generic_cf_if_kernelD1Ev, 
+                       __ZThn200_N8Espresso21generic_cf_for_kernelD0Ev, __ZThn200_N8Espresso21generic_cf_for_kernelD1Ev, 
+                       __ZThn200_N8Espresso22generic_cf_else_kernelD0Ev, __ZThn200_N8Espresso22generic_cf_else_kernelD1Ev, 
+                       __ZThn200_N8Espresso22generic_cf_jump_kernelD0Ev, __ZThn200_N8Espresso22generic_cf_jump_kernelD1Ev, 
+                       __ZThn200_N8Espresso22generic_cf_loop_kernelD0Ev, __ZThn200_N8Espresso22generic_cf_loop_kernelD1Ev, 
                        _c_network_get_input_names, _c_network_get_output_names, _dump_test_vector, 
                        _espresso_ane_cache_has_network, _espresso_ane_cache_purge_network, 
                        _espresso_blob_is_dynamic, _espresso_blob_set_int_option, 

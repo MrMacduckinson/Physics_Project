@@ -2,13 +2,12 @@
 //  NSFileProviderManager.h
 //  FileProvider
 //
-//  Copyright (c) 2016-2020 Apple Inc. All rights reserved.
+//  Copyright (c) 2016-2017 Apple Inc. All rights reserved.
 //
 
 #import <FileProvider/NSFileProviderDefines.h>
 #import <FileProvider/NSFileProviderItem.h>
 #import <FileProvider/NSFileProviderDomain.h>
-#import <FileProvider/NSFileProviderEnumerating.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -27,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
  The class also provides methods to manage provider domains. Each domain has a
  corresponding manager.
  */
-FILEPROVIDER_API_AVAILABILITY_V2_V3
+API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos, macCatalyst) API_UNAVAILABLE(watchos, tvos)
 @interface NSFileProviderManager : NSObject
 
 - (instancetype)init NS_UNAVAILABLE;
@@ -72,25 +71,6 @@ Return the manager responsible for the default domain.
 - (void)signalEnumeratorForContainerItemIdentifier:(NSFileProviderItemIdentifier)containerItemIdentifier completionHandler:(void (^)(NSError * __nullable error))completion NS_SWIFT_NAME(signalEnumerator(for:completionHandler:));
 
 /**
- Return the user visible URL for an item identifier.
-
- Calling this method marks the calling process in such a way that accessing
- files will not trigger materialization; instead, accesses to unmd
- files will fail with EDEADLK.
- */
-- (void)getUserVisibleURLForItemIdentifier:(NSFileProviderItemIdentifier)itemIdentifier completionHandler:(void (^)(NSURL * __nullable userVisibleFile, NSError * __nullable error))completionHandler FILEPROVIDER_API_AVAILABILITY_V3 NS_SWIFT_NAME(getUserVisibleURL(for:completionHandler:));
-
-/**
- Return the identifier and domain for a user visible URL.
-
- This method returns the identifier and domain of a user visible URL if
- applicable. Calling this method on a file which doesn't reside in your
- provider/domain, or which hasn't yet been assigned an identifier by
- the provider will return the Cocoa error NSFileNoSuchFileError.
- */
-+ (void)getIdentifierForUserVisibleFileAtURL:(NSURL *)url completionHandler:(void (^)(NSFileProviderItemIdentifier __nullable itemIdentifier, NSFileProviderDomainIdentifier __nullable domainIdentifier, NSError * __nullable error))completionHandler FILEPROVIDER_API_AVAILABILITY_V3;
-
-/**
  Registers the given NSURLSessionTask to be responsible for the specified item.
  A given item can only have one task registered at a time. The task must be
  suspended at the time of calling.
@@ -98,6 +78,24 @@ Return the manager responsible for the default domain.
  */
 - (void)registerURLSessionTask:(NSURLSessionTask *)task forItemWithIdentifier:(NSFileProviderItemIdentifier)identifier completionHandler:(void (^)(NSError * __nullable error))completion;
 
+/**
+ Return the user visible URL for an item identifier.
+
+ Calling this method marks the calling process in such a way that accessing
+ files will not trigger materialization; instead, accesses to unmd
+ files will fail with EDEADLK.
+ */
+- (void)getUserVisibleURLForItemIdentifier:(NSFileProviderItemIdentifier)itemIdentifier completionHandler:(void (^)(NSURL * __nullable userVisibleFile, NSError * __nullable error))completionHandler API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst) NS_SWIFT_NAME(getUserVisibleURL(for:completionHandler:));
+
+
+/**
+ Return the identifier and domain for a user visible URL.
+
+ This method returns the identifier and domain of a user visible URL if
+ applicable. Calling this method on a file which doesn't reside in your
+ provider/domain will return the Cocoa error NSFileNoSuchFileError.
+ */
++ (void)getIdentifierForUserVisibleFileAtURL:(NSURL *)url completionHandler:(void (^)(NSFileProviderItemIdentifier __nullable itemIdentifier, NSFileProviderDomainIdentifier __nullable domainIdentifier, NSError * __nullable error))completionHandler API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
 
 
 
@@ -172,22 +170,6 @@ Return the manager responsible for the default domain.
 
 @end
 
-@interface NSFileProviderManager (MaterializedSet)
-
-/**
- Returns an enumerator for the set of materialized containers.
-
- This enumerator is unlike other enumerators because the roles of the system
- and the app/extension are reversed:
- - The system enumerates the working set after the extension calls
-   'signalEnumeratorForContainerItemIdentifier';
- - The app/extension enumerates the materialized set after the system calls
-   'materializedItemsDidChangeWithCompletionHandler'.
- */
-- (id<NSFileProviderEnumerator>)enumeratorForMaterializedItems FILEPROVIDER_API_AVAILABILITY_V3;
-
-@end
-
 @interface NSFileProviderManager (Import)
 
 /** Request the creation of a new domain that will take ownership of on-disk data that
@@ -218,7 +200,7 @@ Return the manager responsible for the default domain.
  will be received for both the import and the scan.
  */
 + (void)importDomain:(NSFileProviderDomain *)domain fromDirectoryAtURL:(NSURL *)url completionHandler:(void(^)(NSError * _Nullable error))completionHandler
-    FILEPROVIDER_API_AVAILABILITY_V3;
+API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
 
 /** Notify the system that the itemIdentifiers known by the system are not valid anymore.
 
@@ -251,11 +233,53 @@ Return the manager responsible for the default domain.
 - (void)reimportItemsBelowItemWithIdentifier:(NSFileProviderItemIdentifier)itemIdentifier
                            completionHandler:(void (^)(NSError * _Nullable error))completionHandler
     NS_SWIFT_NAME(reimportItems(below:completionHandler:))
-    FILEPROVIDER_API_AVAILABILITY_V3;
+    API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
 
 @end
 
-@interface NSFileProviderManager (Eviction)
+/**
+ Policy regarding download and caching of an item by the system.
+ */
+typedef NS_ENUM(NSUInteger, NSFileProviderDownloadPolicy) {
+    /**
+     By default, files are downloaded on demand (e.g. when explicitely open by
+     the user) and may be evicted when needed (e.g. on low disk pressure.)
+     */
+    NSFileProviderDownloadPolicyDefault = 0,
+
+    /**
+     Download this item when appropriate, minding shared resources like
+     available disk space.
+
+     Set this policy on files that are likely to be needed by the user in the
+     near future.
+     */
+    NSFileProviderDownloadPolicySpeculative = 1,
+
+    /**
+     Download this item and keep it downloaded forever.
+
+     This policy applies recursively to all the items in a directory.
+     Set this policy only on files that the user must keep locally available for
+     offline use; abusing this policy causes shared resources like availabe disk
+     space to run out.
+     */
+    NSFileProviderDownloadPolicyKeepDownloaded = 2,
+} API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
+
+@interface NSFileProviderManager (DownloadAndEviction)
+
+/**
+ Trigger a download or change the download policy.
+ See the documentation on the download policies for details.
+
+ The completion handler is called to acknowledge the change of policy: the
+ actual downloads are scheduled asynchronously when appropriate.
+ */
+- (void)setDownloadPolicy:(NSFileProviderDownloadPolicy)downloadPolicy
+    forItemWithIdentifier:(NSFileProviderItemIdentifier)itemIdentifier
+        completionHandler:(void (^)(NSError * _Nullable))completionHandler
+    API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
 
 /**
  Request that the system removes an item from its cache.
@@ -267,25 +291,9 @@ Return the manager responsible for the default domain.
  The completion handler is called when the item has been evicted from disk.
  */
 - (void)evictItemWithIdentifier:(NSFileProviderItemIdentifier)itemIdentifier
-              completionHandler:(void (^)(NSError * _Nullable error))completionHandler
-    FILEPROVIDER_API_AVAILABILITY_V3;
+              completionHandler:(void (^)(NSError * _Nullable))completionHandler
+    API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
 
-@end
-
-
-@interface NSFileProviderManager (Stabilization)
-
-/**
- Wait for stabilization of the domain.
-
- The system will wait until it is caught up with the file system's changes up to
- the time of the call, then wait until it is caught up with the provider's changes up to
- the time of the call.
-
- The completion handler is called when both sets of changes are caught up to at least the time
- of the call. This is useful to enforce a consistent state for testing.
- */
-- (void)waitForStabilizationWithCompletionHandler:(void(^)(NSError * _Nullable error))completionHandler FILEPROVIDER_API_AVAILABILITY_V3;
 @end
 
 NS_ASSUME_NONNULL_END

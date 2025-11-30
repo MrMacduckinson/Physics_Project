@@ -1,11 +1,11 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A24929C3-95E6-35A7-9654-46FF3F4D1E80', 'x86_64: A24929C3-95E6-35A7-9654-46FF3F4D1E80' ]
+uuids:           [ 'x86_64: 87B4BC36-78DA-3320-B455-FACB48DC63AA', 'x86_64: 87B4BC36-78DA-3320-B455-FACB48DC63AA' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight'
 current-version: 600
 compatibility-version: 64
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _SLAcquireDisplayFadeReservation, _SLAssociateMouseAndMouseCursorPosition, 
                        _SLBeginDisplayConfiguration, _SLCFDictionaryGetBoolean, _SLCFDictionaryGetFloat, 

@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0D5BFD01-D4A7-3C8D-AA69-C329C1A69792', 'x86_64: 0D5BFD01-D4A7-3C8D-AA69-C329C1A69792' ]
+uuids:           [ 'x86_64: FDA0E623-F6F2-3402-B72C-0C60A32C2CC1', 'x86_64: FDA0E623-F6F2-3402-B72C-0C60A32C2CC1' ]
 platform:        zippered
 install-name:    '/usr/lib/libmecab.dylib'
-current-version: 883.11
-exports:
+current-version: 883
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _mecab_cost_train, _mecab_destroy, _mecab_dict_gen, _mecab_dict_index, 
                        _mecab_dictionary_info, _mecab_do, _mecab_format_node, _mecab_get_feature, 

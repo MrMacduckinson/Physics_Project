@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 92019C5F-2BE7-38A8-87D2-FF698B6461CC', 'x86_64: 92019C5F-2BE7-38A8-87D2-FF698B6461CC' ]
+uuids:           [ 'x86_64: 2950538C-EFE4-30A5-A32E-1C15ABAAF97A', 'x86_64: 2950538C-EFE4-30A5-A32E-1C15ABAAF97A' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DifferentialPrivacy.framework/Versions/A/DifferentialPrivacy'
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _DifferentialPrivacyVersionNumber, _DifferentialPrivacyVersionString, 
                        __DPDaemonInterface, __DPToolSupportedCommands, __kDPMaxRefillAmount, 

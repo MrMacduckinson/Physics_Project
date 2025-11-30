@@ -1,6 +1,6 @@
-/* iig(DriverKit-73.140.1) generated from IOUserNetworkRxCompletionQueue.iig */
+/* iig(DriverKit-73.40.3) generated from IOUserNetworkRxCompletionQueue.iig */
 
-/* IOUserNetworkRxCompletionQueue.iig:1-7 */
+/* IOUserNetworkRxCompletionQueue.iig:1-17 */
 #ifndef _IOUSERNETWORKRXCOMPLETIONQUEUE_IIG
 #define _IOUSERNETWORKRXCOMPLETIONQUEUE_IIG
 
@@ -8,40 +8,17 @@
 #include <NetworkingDriverKit/IOUserNetworkPacketBufferPool.h>  /* .iig include */
 #include <NetworkingDriverKit/IOUserNetworkPacketQueue.h>  /* .iig include */
 
-/* source class IOUserNetworkRxCompletionQueue IOUserNetworkRxCompletionQueue.iig:8-37 */
-
-#if __DOCUMENTATION__
-#define KERNEL IIG_KERNEL
-
 /*!
+@iig implementation
+#if KERNEL
+#include <NetworkingDriverKit/IOUserNetworkPacketBufferPool_kext.h>
+#include <NetworkingDriverKit/IOUserNetworkPacketQueue_kext.h>
+#include <NetworkingDriverKit/IOUserNetworkRxCompletionQueue_kext.h>
+#endif
+@iig end
 */
 
-class KERNEL IOUserNetworkRxCompletionQueue : public IOUserNetworkPacketQueue
-{
-public:
-    static kern_return_t
-    Create(
-        IOUserNetworkPacketBufferPool *         pool,
-        OSObject *                          owner,
-        uint32_t                            capacity,
-        uint32_t                            queueId,
-        IODispatchQueue *                   dispatchQueue,
-        IOUserNetworkRxCompletionQueue **   queue) LOCAL;
-
-    virtual bool
-    init() override;
-
-    virtual void
-    free() override;
-
-    virtual kern_return_t
-    SetEnable(bool isEnable) LOCAL;
-};
-
-#undef KERNEL
-#else /* __DOCUMENTATION__ */
-
-/* generated class IOUserNetworkRxCompletionQueue IOUserNetworkRxCompletionQueue.iig:8-37 */
+/* class IOUserNetworkRxCompletionQueue IOUserNetworkRxCompletionQueue.iig:18-37 */
 
 #define IOUserNetworkRxCompletionQueue_Create_ID            0xf8300e5138b8e424ULL
 
@@ -170,9 +147,6 @@ public:
 
 };
 #endif /* !KERNEL */
-
-
-#endif /* !__DOCUMENTATION__ */
 
 /* IOUserNetworkRxCompletionQueue.iig:39- */
 

@@ -2,7 +2,8 @@
 //  NSFileProviderItemDecoration.h
 //  FileProvider
 //
-//  Copyright © 2019-2020 Apple Inc. All rights reserved.
+//  Created by Johannes Fortmann on 1/16/19.
+//  Copyright © 2019 Apple Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -66,5 +67,5 @@ typedef NSString *NSFileProviderItemDecorationIdentifier NS_TYPED_EXTENSIBLE_ENU
  To adopt this protocol, implement the -decorations method on your NSFileProviderItem to return valid decoration identifiers
  from your Info.plist.
  */
- @property (nonatomic, nullable, readonly, strong) NSArray <NSFileProviderItemDecorationIdentifier> *decorations FILEPROVIDER_API_AVAILABILITY_V3;
+ @property (nonatomic, nullable, readonly, strong) NSArray <NSFileProviderItemDecorationIdentifier> *decorations API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
 @end

@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
  @class         HKCDADocumentSample
  @abstract      A sample object representing a CDA document.
  */
-HK_EXTERN API_AVAILABLE(ios(10.0)) API_UNAVAILABLE(watchos)
+HK_EXTERN API_AVAILABLE(ios(10.0)) __WATCHOS_PROHIBITED
 @interface HKCDADocumentSample : HKDocumentSample
 
 /*!
@@ -54,7 +54,7 @@ HK_EXTERN API_AVAILABLE(ios(10.0)) API_UNAVAILABLE(watchos)
 
 @end
 
-HK_EXTERN API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(watchos)
+HK_EXTERN API_AVAILABLE(ios(11.0)) __WATCHOS_PROHIBITED
 @interface HKCDADocument : NSObject
 
 /*!

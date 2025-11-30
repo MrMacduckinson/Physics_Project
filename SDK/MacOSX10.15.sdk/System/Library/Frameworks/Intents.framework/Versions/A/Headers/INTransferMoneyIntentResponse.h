@@ -2,7 +2,7 @@
 //  INTransferMoneyIntentResponse.h
 //  Intents
 //
-//  Copyright (c) 2016-2020 Apple Inc. All rights reserved.
+//  Copyright (c) 2016-2019 Apple Inc. All rights reserved.
 //
 
 #import <Intents/INIntentResponse.h>
@@ -21,12 +21,12 @@ typedef NS_ENUM(NSInteger, INTransferMoneyIntentResponseCode) {
     INTransferMoneyIntentResponseCodeFailureRequiringAppLaunch,
     INTransferMoneyIntentResponseCodeFailureCredentialsUnverified,
     INTransferMoneyIntentResponseCodeFailureInsufficientFunds,
-} API_AVAILABLE(ios(11.0), watchos(4.0)) API_UNAVAILABLE(macos, tvos);
+} API_AVAILABLE(ios(11.0), watchos(4.0)) API_UNAVAILABLE(macosx);
 
 NS_ASSUME_NONNULL_BEGIN
 
 API_AVAILABLE(ios(11.0), watchos(4.0))
-API_UNAVAILABLE(macos, tvos)
+API_UNAVAILABLE(macosx)
 @interface INTransferMoneyIntentResponse : INIntentResponse
 
 - (id)init NS_UNAVAILABLE;

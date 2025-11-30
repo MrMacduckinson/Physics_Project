@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 392AA719-EE30-3D4E-929E-C9A86AA12DEA' ]
+uuids:           [ 'x86_64: 42B3241A-4F44-3D15-AB07-CDD349A6962D' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/DigitalTouchShared.framework/Versions/A/DigitalTouchShared'
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _DOT_POINTSIZE, _DigitalTouchSharedVersionNumber, _DigitalTouchSharedVersionString, 
                        _ETAggdEphemeralAddedKey, _ETAggdEphemeralBlockedKey, _ETAggdExpiredUnreadMessagesKey, 

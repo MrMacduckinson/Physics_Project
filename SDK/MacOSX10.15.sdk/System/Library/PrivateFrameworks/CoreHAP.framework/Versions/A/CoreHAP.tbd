@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7D762090-35AA-334C-8E88-80BF00D68F62' ]
+uuids:           [ 'x86_64: EC5A9FFB-DDA1-391E-8C93-ACA2C3F5F2FB' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CoreHAP.framework/Versions/A/CoreHAP'
-current-version: 621.7.3
-exports:
+current-version: 621.2.37
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CBUUIDCharacteristicValidRange, _HAPAccessoryHasPairings, 
                        _HAPAccessoryServerRelayMaximumReachabilityProbeTimeInterval, 
@@ -148,11 +148,10 @@ exports:
                        _HAPServiceUUID_Switch, _HAPServiceUUID_Thermostat, _HAPServiceUUID_TimeInformation, 
                        _HAPServiceUUID_Tunnel, _HAPServiceUUID_Valve, _HAPServiceUUID_VentilationFan, 
                        _HAPServiceUUID_Window, _HAPServiceUUID_WindowCovering, _HAPTXTKey_CategoryID, 
-                       _HAPTXTKey_CompatibilityFeatures, _HAPTXTKey_ConfigNumber, 
-                       _HAPTXTKey_DeviceID, _HAPTXTKey_FeaturesFlags, _HAPTXTKey_LeaderMetrics, 
-                       _HAPTXTKey_Model, _HAPTXTKey_ProtocolVersion, _HAPTXTKey_SetupHash, 
-                       _HAPTXTKey_SourceVersion, _HAPTXTKey_StateNumber, _HAPTXTKey_StatusFlags, 
-                       _HAPTunnelledAccessoryBTLEMaximumVerificationRetryTimeInterval, 
+                       _HAPTXTKey_ConfigNumber, _HAPTXTKey_DeviceID, _HAPTXTKey_FeaturesFlags, 
+                       _HAPTXTKey_LeaderMetrics, _HAPTXTKey_Model, _HAPTXTKey_ProtocolVersion, 
+                       _HAPTXTKey_SetupHash, _HAPTXTKey_SourceVersion, _HAPTXTKey_StateNumber, 
+                       _HAPTXTKey_StatusFlags, _HAPTunnelledAccessoryBTLEMaximumVerificationRetryTimeInterval, 
                        _HAPTunnelledAccessoryBTLEMinimumVerificationRetryTimeInterval, 
                        _HAPTunnelledAccessoryBTLEVerificationRetryFactor, _HAPURLComponent_Accessories, 
                        _HAPURLComponent_Characteristics, _HAPURLComponent_Identify, 

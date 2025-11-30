@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 68D3E9C2-283C-366A-9214-E5DB6191CBD0' ]
+uuids:           [ 'x86_64: 873C84F3-B2DB-3C4D-B846-C38B71E1F0C2' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MailCore.framework/Versions/A/MailCore'
-current-version: 3608.120.23
-exports:
+current-version: 3601.0.10
+exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ CoreSuggestionsTests, DebugBundle, EmailAuthenticationPlugin, 
                          EmailNotificationPlugin, EmailUIPlugin, IMAP, Mail, MailCacheDelete, 
@@ -142,8 +142,7 @@ exports:
                        _MCV2SimpleMigrationTracerIdentifier, _MCVerifyCredentialsKeyDiscoverBestSettings, 
                        _MFOldRangeOfBytes, _MFRangeOfBytes, _MimePartOptionParseTextOnly, 
                        _StringWriterNewString, _createInternetMessageDateFormatter, 
-                       _kQuotingColorListExpectedCount, _mf_stat, _sCommandSpecTable, 
-                       _sStringKeyMimeAttachmentFilename ]
+                       _mf_stat, _sCommandSpecTable, _sStringKeyMimeAttachmentFilename ]
     objc-classes:    [ MCActivity, MCActivityAggregate, MCActivityAggregator, MCActivityMonitor, 
                        MCActivityUpdater, MCAddressManager, MCAggregablePowerLog, 
                        MCAggregateActivity, MCAppleScriptAttachment, MCArchiveFileWrapper, 

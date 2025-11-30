@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 01DFDF6E-3802-3384-B9B5-EA031658D858' ]
+uuids:           [ 'x86_64: 2C60E774-E9BC-386C-9E56-7108D780F410' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SystemMigrationNetworking.framework/Versions/A/SystemMigrationNetworking'
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _SMActionPlistHeaderKeyExists, _SMActionPlistHeaderKeyIsABrokenSymlink, 
                        _SMNActionUniqueID, _SMNCurrentLogLevel, _SMNDE_AttributesKey, 
@@ -19,9 +19,9 @@ exports:
                        _SMNetworkProtocolCurrentVersion, _SMNetworkProtocolYAAFeatureVersion, 
                        _SystemMigrationNetworkingVersionNumber, _SystemMigrationNetworkingVersionString ]
     objc-classes:    [ NetworkCapabilities, SMAutoLoaderSSL, SMAutoLoaderServer, 
-                       SMNAction, SMNActionManager, SMNBSSIDTransformer, SMNBomAction, 
-                       SMNBundleInfoAction, SMNConnection, SMNLegacyPathingAction, 
-                       SMNMigrationInfoAction, SMNNetworkLogTypeTransformer, SMNNetworkMigrationBrowser, 
+                       SMNAction, SMNBSSIDTransformer, SMNBomAction, SMNBundleInfoAction, 
+                       SMNConnection, SMNLegacyPathingAction, SMNMigrationInfoAction, 
+                       SMNNetworkLogTypeTransformer, SMNNetworkMigrationBrowser, 
                        SMNNetworkSession, SMNNetworkStream, SMNNetworkStreamMuxer, 
                        SMNNetworkUtilities, SMNPathInfoAction, SMNPathingAction, 
                        SMNSSLSecurityProvider, SMNSlingShotAdvertiser, SMNSlingShotBrowser, 

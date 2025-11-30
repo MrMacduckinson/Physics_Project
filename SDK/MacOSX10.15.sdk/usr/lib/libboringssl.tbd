@@ -1,11 +1,11 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 935DDB00-6514-3D0C-AEA5-C5FE6BCC0B61', 'x86_64: 935DDB00-6514-3D0C-AEA5-C5FE6BCC0B61' ]
+uuids:           [ 'x86_64: 12B83BB5-43F8-347C-93A9-13E624388DB5', 'x86_64: 12B83BB5-43F8-347C-93A9-13E624388DB5' ]
 platform:        zippered
 install-name:    '/usr/lib/libboringssl.dylib'
 current-version: 0
 compatibility-version: 0
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _BIO_find_type, _BIO_flush, _BIO_free, _BIO_free_all, _BIO_get_fd, 
                        _BIO_get_retry_reason, _BIO_hexdump, _BIO_indent, _BIO_method_type, 

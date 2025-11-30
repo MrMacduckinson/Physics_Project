@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 15B82B6B-2253-30B3-A28C-F44075515DB6' ]
+uuids:           [ 'x86_64: DC014CD1-D36C-3C61-B571-B64FFF0D32E2' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ToneKit.framework/Versions/A/ToneKit'
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _TKFloatCeilForScale, _TKFloatEqualToFloat, _TKFloatFloorForScale, 
                        _TKFloatGetSafeScaleForValue, _TKFloatGreaterThanOrEqualToFloat, 

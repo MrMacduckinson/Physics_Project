@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3FBA882A-83BF-3163-916F-0D7FA17D010D', 'x86_64: 3FBA882A-83BF-3163-916F-0D7FA17D010D' ]
+uuids:           [ 'x86_64: 0EC1D344-A2EB-33A7-86F6-A562B19E3D98', 'x86_64: 0EC1D344-A2EB-33A7-86F6-A562B19E3D98' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AppSSOCore.framework/Versions/A/AppSSOCore'
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _SOAuthorizationOptionCoreNoUserInterface, _SOErrorDomain, 
                        _SOErrorSubcodeKey, _appSSO_handleResponse, _appSSO_handleResponseCredential, 

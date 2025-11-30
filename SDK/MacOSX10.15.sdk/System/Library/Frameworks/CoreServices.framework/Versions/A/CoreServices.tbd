@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AA140158-E909-34C2-B2F5-20EBC93E0056', 'x86_64: AA140158-E909-34C2-B2F5-20EBC93E0056' ]
+uuids:           [ 'x86_64: C8F86BE7-AAED-30A6-BBC2-550446137E7C', 'x86_64: C8F86BE7-AAED-30A6-BBC2-550446137E7C' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices'
-current-version: 1069.24
-exports:
+current-version: 1069.11
+exports:         
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork', 
                        '/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation', 
@@ -27,13 +27,13 @@ exports:
                        _nextafterf, _remquo, '_remquo$fenv_access_off' ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2E5FD5AE-8A7F-353F-9BD1-0241F3586181', 'x86_64: 2E5FD5AE-8A7F-353F-9BD1-0241F3586181' ]
+uuids:           [ 'x86_64: 3301AF1B-D178-306A-9641-B57AA03FB1BE', 'x86_64: 3301AF1B-D178-306A-9641-B57AA03FB1BE' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE'
-current-version: 838.1
+current-version: 838
 compatibility-version: 0
 parent-umbrella: CoreServices
-exports:
+exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ DesktopServices, Foundation, HIServices, LaunchServices, 
                          PrintCore ]
@@ -106,12 +106,12 @@ exports:
                        _vAEBuildAppleEvent, _vAEBuildDesc, _vAEBuildParameters ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BE379206-99FA-30CD-8391-2708473A633F' ]
+uuids:           [ 'x86_64: FAA1467B-6D39-3EBE-9810-A4DF49478F10' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore'
 current-version: 1217
 parent-umbrella: CoreServices
-exports:
+exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ AudioToolbox, Foundation, Metadata ]
     symbols:         [ _AbsoluteDeltaToDuration, _AbsoluteDeltaToNanoseconds, _AbsoluteToDuration, 
@@ -749,12 +749,12 @@ exports:
                        _scPrefsSetString, _str2dec, _x80tod, _x80told ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 26B70C82-25BC-353A-858F-945B14C803A2', 'x86_64: 26B70C82-25BC-353A-858F-945B14C803A2' ]
+uuids:           [ 'x86_64: C1798F09-36D3-3C8E-AF72-A3DE63962AF1', 'x86_64: C1798F09-36D3-3C8E-AF72-A3DE63962AF1' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/DictionaryServices.framework/Versions/A/DictionaryServices'
-current-version: 323.7
+current-version: 323
 parent-umbrella: CoreServices
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _DCSActivateDictionaryPanel, _DCSCopyActiveDictionaries, _DCSCopyAvailableDictionaries, 
                        _DCSCopyDefinitionMarkup, _DCSCopyDefinitionRecords, _DCSCopyDefinitions, 
@@ -816,12 +816,12 @@ exports:
                        _kIDXSearchPrefixMatch, _kIDXSearchWildcardMatch ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FC84DB48-A3CE-30F7-A918-B3587731ACC7', 'x86_64: FC84DB48-A3CE-30F7-A918-B3587731ACC7' ]
+uuids:           [ 'x86_64: 9BB76885-7CD7-3369-B759-33F7E5DA5392', 'x86_64: 9BB76885-7CD7-3369-B759-33F7E5DA5392' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/FSEvents'
-current-version: 1268.100.1
+current-version: 1268.40.5
 parent-umbrella: CoreServices
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _FSEventStreamCopyDescription, _FSEventStreamCopyPathsBeingWatched, 
                        _FSEventStreamCreate, _FSEventStreamCreateRelativeToDevice, 
@@ -835,12 +835,12 @@ exports:
                        _FSEventsPurgeEventsForDeviceUpToEventId ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9A5359D9-9148-3B18-B868-56A9DA5FB60C', 'x86_64: 9A5359D9-9148-3B18-B868-56A9DA5FB60C' ]
+uuids:           [ 'x86_64: 88F59BD5-412A-35EE-AD45-E6BF80B24891', 'x86_64: 88F59BD5-412A-35EE-AD45-E6BF80B24891' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices'
-current-version: 1069.24
+current-version: 1069.11
 parent-umbrella: CoreServices
-exports:
+exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ Foundation ]
     symbols:         [ _AcquireIconRef, _CompositeIconRef, _GetCustomIconsEnabled, 
@@ -1215,12 +1215,12 @@ exports:
                        _LSURLOverride, _UTType, _UTTypeQuery ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0973F7E5-D58C-3574-A3CE-4F12CAC2D4C7', 'x86_64: 0973F7E5-D58C-3574-A3CE-4F12CAC2D4C7' ]
+uuids:           [ 'x86_64: 028AC15A-35B7-3E1F-BCDC-470C8EA0CA09', 'x86_64: 028AC15A-35B7-3E1F-BCDC-470C8EA0CA09' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata'
-current-version: 2076.7
+current-version: 2074.4
 parent-umbrella: CoreServices
-exports:
+exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ Foundation ]
     symbols:         [ _MDBackupBegin, _MDBackupCancel, _MDBackupCreate, _MDBackupEnd, 
@@ -1659,12 +1659,12 @@ exports:
                        _MDPlistBytes, _MDServiceConnection ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0E4F48AD-402C-3E9D-9CA9-6DD9479B28F9', 'x86_64: 0E4F48AD-402C-3E9D-9CA9-6DD9479B28F9' ]
+uuids:           [ 'x86_64: A667F007-A599-3869-99F7-1F8460011015', 'x86_64: A667F007-A599-3869-99F7-1F8460011015' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices'
-current-version: 1069.24
+current-version: 1069.11
 parent-umbrella: CoreServices
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AlertSoundPlay, _AlertSoundPlayCustomSound, _BatteryCount, 
                        _CSGetDefaultIdentityAuthority, _CSGetLocalIdentityAuthority, 
@@ -1796,12 +1796,12 @@ exports:
                        _kcgetkeychainname, _wsCFDateToISO8601String, _wsCreateDateFromISO8601 ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2C5E1D85-E8B1-3DC5-91B9-E3EDB48E9369', 'x86_64: 2C5E1D85-E8B1-3DC5-91B9-E3EDB48E9369' ]
+uuids:           [ 'x86_64: F0A931E4-0C31-36BA-8DD7-01FDF9813FB7', 'x86_64: F0A931E4-0C31-36BA-8DD7-01FDF9813FB7' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SearchKit.framework/Versions/A/SearchKit'
 current-version: 417.1
 parent-umbrella: CoreServices
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AIATFree, _AIATGetAllocator, _AIATMalloc, _AIATRegisterReportErrorUPP, 
                        _AIATSetAllocator, _DisposeIASearchIsHitFilterUPP, _IACFDataDocAccessorCreate, 
@@ -1919,12 +1919,12 @@ exports:
                        _kSKSubstitutions, _kSKTermChars ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 02DE0D56-E371-3EF5-9BC1-FA435451B412', 'x86_64: 02DE0D56-E371-3EF5-9BC1-FA435451B412' ]
+uuids:           [ 'x86_64: 62C3066A-3991-313F-AE2D-75B2B5934D52', 'x86_64: 62C3066A-3991-313F-AE2D-75B2B5934D52' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SharedFileList.framework/Versions/A/SharedFileList'
-current-version: 131.4
+current-version: 131
 parent-umbrella: CoreServices
-exports:
+exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ Foundation ]
     symbols:         [ _LSSharedFileListAddObserver, _LSSharedFileListAddObserverOnQueue, 
@@ -1943,9 +1943,8 @@ exports:
                        _LSSharedFileListSetProperty, _SFLListChangeNotification, 
                        _SFLListLaunchNotification, _SFLServiceName, __LSSharedFileListCopyListType, 
                        __LSSharedFileListIsURLSharePoint, __LSSharedFileListItemCopyBinding, 
-                       __LSSharedFileListItemCopyURL, __LSSharedFileListItemOpen, 
-                       __LSSharedFileListItemSetBookmarkData, __LSSharedFileListItemSetURL, 
-                       __LSSharedFileListUpgrade, __LSSharedFileListVolumeIsVisibleInSidebar, 
+                       __LSSharedFileListItemCopyURL, __LSSharedFileListItemSetBookmarkData, 
+                       __LSSharedFileListItemSetURL, __LSSharedFileListUpgrade, __LSSharedFileListVolumeIsVisibleInSidebar, 
                        __SFLCreateSnapshot, __SFLGetRestrictedCustomFileList, __SFLIsFolderShareable, 
                        __SFLRelease, __SFLReleaseSnapshot, __kLSSharedFileListFavoriteItems, 
                        __kLSSharedFileListFavoriteVolumes, __kLSSharedFileListGlobalLoginItems, 

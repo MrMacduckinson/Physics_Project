@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1844B00E-6256-357E-B068-B3B950623591' ]
+uuids:           [ 'x86_64: D32ECF35-F704-345E-90C7-DA1CCB8D216A' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MLFoundation.framework/CoreMLProtobuf.framework/Versions/A/CoreMLProtobuf'
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CoreMLProtobufVersionNumber, _CoreMLProtobufVersionString, 
                        _GPBApi_Syntax_RawValue, _GPBAutocreatedArrayModified, _GPBAutocreatedDictionaryModified, 

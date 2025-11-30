@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 61A07A3A-B069-3BD0-9C3A-6C6A7076378E', 'x86_64: 61A07A3A-B069-3BD0-9C3A-6C6A7076378E' ]
+uuids:           [ 'x86_64: 54AF9180-D277-3353-BE98-D5BED4F9BCF1', 'x86_64: 54AF9180-D277-3353-BE98-D5BED4F9BCF1' ]
 platform:        zippered
 install-name:    '/usr/lib/libIOAccessoryManager.dylib'
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _IOAccesoryManagerGetDigitalIDAccessoryVersionInfo, _IOAccesoryManagerGetDigitalIDInterfaceDeviceInfo, 
                        _IOAccessoryEAInterfaceCopyDeviceDockType, _IOAccessoryEAInterfaceCopyDeviceFirmwareRevision, 

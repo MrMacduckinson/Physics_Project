@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7F0DA183-1796-315A-B44A-2C234C7C50BE', 'x86_64: 7F0DA183-1796-315A-B44A-2C234C7C50BE' ]
+uuids:           [ 'x86_64: 4D68248B-BD40-32E3-ABCA-CE23BCA0A6A4', 'x86_64: 4D68248B-BD40-32E3-ABCA-CE23BCA0A6A4' ]
 platform:        zippered
 install-name:    '/usr/lib/libChineseTokenizer.dylib'
 current-version: 34
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ChineseTokenizerAdvanceToNextToken, _ChineseTokenizerCreate, 
                        _ChineseTokenizerGetCurrentTokenRange, _ChineseTokenizerGoToTokenAtIndex, 

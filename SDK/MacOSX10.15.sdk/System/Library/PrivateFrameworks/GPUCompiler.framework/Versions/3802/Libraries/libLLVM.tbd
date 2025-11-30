@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 150B6F08-8617-386D-B5E2-FE29D4EA75B2' ]
+uuids:           [ 'x86_64: F7BAC707-4FC1-39E2-B254-D0B420DD715B' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/3802/Libraries/libLLVM.dylib'
 current-version: 3802.6.4
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ConvertUTF16toUTF32, _ConvertUTF16toUTF8, _ConvertUTF32toUTF16, 
                        _ConvertUTF32toUTF8, _ConvertUTF8toUTF16, _ConvertUTF8toUTF32, 

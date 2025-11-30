@@ -1,11 +1,11 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: D1CF3A92-2424-3420-B375-DEED7AA68C53', 'x86_64: D1CF3A92-2424-3420-B375-DEED7AA68C53', 
-                   'x86_64h: 00F331F1-0D09-39B3-8736-1FE90E64E903', 'x86_64h: 00F331F1-0D09-39B3-8736-1FE90E64E903' ]
+uuids:           [ 'x86_64: 895CC10E-5385-37F6-B813-060AD6E6E01C', 'x86_64: 895CC10E-5385-37F6-B813-060AD6E6E01C', 
+                   'x86_64h: 636A1A1C-7AFC-3E82-B86B-0173912A3437', 'x86_64h: 636A1A1C-7AFC-3E82-B86B-0173912A3437' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_m.dylib'
 current-version: 3178
-exports:
+exports:         
   - archs:           [ x86_64, x86_64h ]
     symbols:         [ __FE_DFL_DISABLE_SSE_DENORMS_ENV, __FE_DFL_ENV, ___Libm_version, 
                        ___cos_d2, ___cos_d4, ___cos_f4, ___cos_f8, ___cospi, ___cospif, 

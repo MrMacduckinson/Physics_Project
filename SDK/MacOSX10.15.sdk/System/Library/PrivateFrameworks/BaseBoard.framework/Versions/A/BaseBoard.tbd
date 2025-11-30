@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 10D0F3BB-E8F3-365E-8528-6AC996A9B0E7', 'x86_64: 10D0F3BB-E8F3-365E-8528-6AC996A9B0E7' ]
+uuids:           [ 'x86_64: 1A44B522-904F-3541-BC8C-5EDF0C6EE49C', 'x86_64: 1A44B522-904F-3541-BC8C-5EDF0C6EE49C' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/BaseBoard.framework/Versions/A/BaseBoard'
 current-version: 0
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _BSAbsoluteTimeFromMachTime, _BSActionClearResponseListenerWithToken, 
                        _BSActionCreateResponseListenerWithHandler, _BSActionErrorDomain, 
@@ -143,24 +143,23 @@ exports:
                        BSBlockTransaction, BSCFBundle, BSCGImageFromIOSurfaceBuilder, 
                        BSColor, BSCompoundAssertion, BSCopyingCacheSet, BSCornerRadiusConfiguration, 
                        BSCurrentContainerPathProvider, BSDateFormatterCache, BSDateTimeCache, 
-                       BSDescriptionBuilder, BSDescriptionStream, BSDispatchQueueAttributes, 
-                       BSDispatchSource, BSEqualsBuilder, BSError, BSEventQueue, 
-                       BSEventQueueEvent, BSEventQueueLock, BSFuture, BSHashBuilder, 
-                       BSIntegerMap, BSIntegerSet, BSKeyedSettings, BSLogStateCaptureEntry, 
-                       BSMIGServer, BSMachPortReceiveRight, BSMachPortRight, BSMachPortSendRight, 
-                       BSMachPortTaskNameRight, BSMachPortTransferableSendRight, 
-                       BSMonotonicReferenceTime, BSMutableAnimationSettings, BSMutableIntegerMap, 
-                       BSMutableIntegerSet, BSMutableKeyedSettings, BSMutableSettings, 
-                       BSMutableSpringAnimationSettings, BSObjCArgument, BSObjCBlockArgument, 
-                       BSObjCMethod, BSObjCProtocol, BSPathProviderFactory, BSPersistentTimer, 
-                       BSPlatform, BSPluginBundle, BSPluginManager, BSPluginManagerCoordinator, 
-                       BSPluginSpecification, BSPortDeathSentinel, BSPortDeathWatcher, 
-                       BSPowerMonitor, BSProcessDeathWatcher, BSProcessHandle, BSPropertyMetadata, 
-                       BSProtobufSchema, BSProtobufSerialization, BSRelativeDateTimer, 
-                       BSSerializedRequestQueue, BSSettings, BSSettingsDiff, BSSignal, 
-                       BSSimpleAssertion, BSSpringAnimationSettings, BSSqliteDatabaseConnection, 
-                       BSSqlitePreparedStatement, BSSqliteResultRow, BSStackFrameInfo, 
-                       BSStateCaptureInvalidator, BSSystemContainerForCurrentProcessPathProvider, 
+                       BSDescriptionBuilder, BSDispatchQueueAttributes, BSDispatchSource, 
+                       BSEqualsBuilder, BSError, BSEventQueue, BSEventQueueEvent, 
+                       BSEventQueueLock, BSFuture, BSHashBuilder, BSIntegerMap, BSIntegerSet, 
+                       BSKeyedSettings, BSLogStateCaptureEntry, BSMIGServer, BSMachPortReceiveRight, 
+                       BSMachPortRight, BSMachPortSendRight, BSMachPortTaskNameRight, 
+                       BSMachPortTransferableSendRight, BSMonotonicReferenceTime, 
+                       BSMutableAnimationSettings, BSMutableIntegerMap, BSMutableIntegerSet, 
+                       BSMutableKeyedSettings, BSMutableSettings, BSMutableSpringAnimationSettings, 
+                       BSObjCArgument, BSObjCBlockArgument, BSObjCMethod, BSObjCProtocol, 
+                       BSPathProviderFactory, BSPersistentTimer, BSPlatform, BSPluginBundle, 
+                       BSPluginManager, BSPluginManagerCoordinator, BSPluginSpecification, 
+                       BSPortDeathSentinel, BSPortDeathWatcher, BSPowerMonitor, BSProcessDeathWatcher, 
+                       BSProcessHandle, BSPropertyMetadata, BSProtobufSchema, BSProtobufSerialization, 
+                       BSRelativeDateTimer, BSSerializedRequestQueue, BSSettings, 
+                       BSSettingsDiff, BSSignal, BSSimpleAssertion, BSSpringAnimationSettings, 
+                       BSSqliteDatabaseConnection, BSSqlitePreparedStatement, BSSqliteResultRow, 
+                       BSStackFrameInfo, BSStateCaptureInvalidator, BSSystemContainerForCurrentProcessPathProvider, 
                        BSTimer, BSTransaction, BSTransactionBlockObserver, BSUIApplicationSupport, 
                        BSUserDefaultsTestDoubleDictionaryImpl, BSWatchdog, BSXPCBundle, 
                        BSXPCCoder, BSXPCCodingArray, BSXPCConnectionListener, BSXPCConnectionListenerManager, 

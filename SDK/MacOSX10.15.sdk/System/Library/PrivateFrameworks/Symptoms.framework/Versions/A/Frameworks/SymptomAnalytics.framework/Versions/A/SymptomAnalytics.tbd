@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2D5277FB-2FCC-34E7-B316-5DD68314F97C', 'x86_64: 2D5277FB-2FCC-34E7-B316-5DD68314F97C' ]
+uuids:           [ 'x86_64: D8A1F2E0-D3FE-3A1C-A1AD-E9B4507286E7', 'x86_64: D8A1F2E0-D3FE-3A1C-A1AD-E9B4507286E7' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomAnalytics.framework/Versions/A/SymptomAnalytics'
-current-version: 1238.120.1
-exports:
+current-version: 1238.40.4
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _SymptomAnalyticsFrameworkDidSaveNotification, _kProcessKeyTypeBundleName, 
                        _kProcessKeyTypeProcName, _kStateMachineStatusKeyAdminState, 
@@ -56,8 +56,8 @@ exports:
                        _kSymptomAnalyticsTypeBundleIdentifier, _kSymptomAnalyticsTypeProcessName, 
                        _kSymptomAnalyticsWorkspacePersistenceOptionPersistentKey ]
     objc-classes:    [ AnalyticsWorkspace, AppAnalytics, DiagnosticCaseUsage, DiagnosticCaseUsageAnalytics, 
-                       LiveUsage, NWActivityFragment, NWActivityMetricData, NetworkAttachmentAnalytics, 
-                       ObjectAnalytics, Process, ProcessAnalytics, SFApp, SFAppCalendarUsage, 
-                       SFAppRun, SFAppTypicalUsage, SFFlow, SFLiveFlowPerf, SFLiveRoutePerf, 
-                       SFNetworkAttachment, SFProvisioningData, UsageAnalytics ]
+                       LiveUsage, NetworkAttachmentAnalytics, ObjectAnalytics, Process, 
+                       ProcessAnalytics, SFApp, SFAppCalendarUsage, SFAppRun, SFAppTypicalUsage, 
+                       SFFlow, SFLiveFlowPerf, SFLiveRoutePerf, SFNetworkAttachment, 
+                       SFProvisioningData, UsageAnalytics ]
 ...

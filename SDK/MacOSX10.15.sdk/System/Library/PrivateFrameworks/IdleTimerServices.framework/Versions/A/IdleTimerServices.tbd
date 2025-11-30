@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F649055D-5F01-3DF7-B78D-53B4A220C746', 'x86_64: F649055D-5F01-3DF7-B78D-53B4A220C746' ]
+uuids:           [ 'x86_64: 5AAD70E3-F95F-3262-A4D9-84138261A315', 'x86_64: 5AAD70E3-F95F-3262-A4D9-84138261A315' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/IdleTimerServices.framework/Versions/A/IdleTimerServices'
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ITIdleTimerServicesErrorConfigurationDescriptionKey, _ITIdleTimerServicesErrorDomain, 
                        _ITIdleTimerServicesErrorReasonKey, _ITIdleTimerStateServiceDomain, 

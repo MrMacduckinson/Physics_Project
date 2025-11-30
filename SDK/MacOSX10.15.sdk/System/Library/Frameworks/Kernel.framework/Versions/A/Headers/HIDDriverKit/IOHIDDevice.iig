@@ -130,7 +130,6 @@ protected:
 
     virtual void setProperty (OSObject * key, OSObject * value) LOCALONLY;
     
-
 public:
   
 };
@@ -147,13 +146,13 @@ class EXTENDS (IOHIDDevice) IOHIDDevicePrivate
                                         IOOptionBits              options    = 0);
     
     /*!
-     * @brief       Process Get/Set report requests from  kernel object
+     * @brief      Process Get/Set repport requests fromn  kernel object
      * @discussion  method called by kernel object to request processing GEt/Set report commands.
      * @param       report      descriptor to store report data.
-     * @param       reportType  report type
+     * @param       reportType  reprot type
      * @param       options     options[0..7] contain report ID.
      * @param       completionTimeout    completion timeout
-     * @param       action    asynchronous handle
+     * @param       action    asychronous handle
      * @return      KERN_SUCCESS is successful see IOReturn.h for error codes.
      */
 
@@ -174,19 +173,19 @@ class EXTENDS (IOHIDDevice) IOHIDDevicePrivate
      * @return      none
      */
 
-    virtual void _CompleteReport (OSAction             * action,
-                                  IOReturn             status,
-                                  uint32_t             actualByteCount) TYPE (IOHIDDevice::CompleteReport);
-    
+    virtual void KernelCompleteReport (OSAction             * action,
+                                       IOReturn             status,
+                                       uint32_t             actualByteCount) TYPE (IOHIDDevice::CompleteReport);
+
 
     /*!
      * @brief       Start in kernel object that represent Device
      * @discussion  Method  used to finalize initialization in kernel object once user space object initialization completed
-     * @param       provider   same object that passed to Start.
+     * @param       provider   same object that passet to Start.
      * @return      KERN_SUCCESS is successful see IOReturn.h for error codes.
      */
 
-    virtual kern_return_t _Start (IOService * provider);
+    virtual kern_return_t KernelStart (IOService * provider);
 
 };
 

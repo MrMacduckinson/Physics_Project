@@ -1,11 +1,11 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 87EA5DE1-506A-39FD-88BE-D8A3416C9012', 'x86_64: 87EA5DE1-506A-39FD-88BE-D8A3416C9012' ]
+uuids:           [ 'x86_64: CF8434BF-B51D-3A68-B6FC-AFB0765530A2', 'x86_64: CF8434BF-B51D-3A68-B6FC-AFB0765530A2' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS'
 current-version: 236
 parent-umbrella: ApplicationServices
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AGAddAttribute, _AGBeginIteration, _AGComputeByteCapacity, 
                        _AGComputeByteCapacityV, _AGComputeChecksum, _AGComputeIncrementalCapacity, 

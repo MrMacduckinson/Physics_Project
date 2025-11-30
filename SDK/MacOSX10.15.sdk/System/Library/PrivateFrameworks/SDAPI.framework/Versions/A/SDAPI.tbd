@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FA3C0CE0-4E5B-3810-A43F-E76B162CBC1B', 'x86_64: FA3C0CE0-4E5B-3810-A43F-E76B162CBC1B' ]
+uuids:           [ 'x86_64: 4658CF30-E63E-3684-9FC7-B155F43E8FB9', 'x86_64: 4658CF30-E63E-3684-9FC7-B155F43E8FB9' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SDAPI.framework/Versions/A/SDAPI'
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _SDApi_HasErrored, _SDApi_Initialize, _SDParamSetHolder_Delete, 
                        _SDParamSetHolder_NewFromFile, _SDParamSetParam_GetHandle, 

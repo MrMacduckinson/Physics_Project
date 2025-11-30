@@ -1,11 +1,11 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 789A18C2-8AC7-3C88-813D-CD674376585D', 'x86_64: 789A18C2-8AC7-3C88-813D-CD674376585D' ]
+uuids:           [ 'x86_64: 2FA4B359-624B-337C-9207-CDCF841C2E52', 'x86_64: 2FA4B359-624B-337C-9207-CDCF841C2E52' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libdyld.dylib'
-current-version: 750.6
+current-version: 733.6
 parent-umbrella: System
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _NSAddImage, _NSAddLibrary, _NSAddLibraryWithSearching, _NSAddressOfSymbol, 
                        _NSCreateObjectFileImageFromFile, _NSCreateObjectFileImageFromMemory, 

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2ECA8369-582E-35CA-96EB-803189E8B9FD', 'x86_64: 2ECA8369-582E-35CA-96EB-803189E8B9FD' ]
+uuids:           [ 'x86_64: C0C8B092-4D3F-318A-9999-692AB2541631', 'x86_64: C0C8B092-4D3F-318A-9999-692AB2541631' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AdCore.framework/Versions/A/AdCore'
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ADAdConnectionGetStringForValue, _ADAdVectorReadFrom, _ADAdsOptions, 
                        _ADAnalyticsEventReadFrom, _ADAttributionRequestReadFrom, 
@@ -42,7 +42,7 @@ exports:
                        ADRoutingInfoMessage, ADSegmentUpdateRequest, ADSegmentUpdateResponse, 
                        ADServer, ADSingleton, ADSponsoredSearchRequest, ADTransparencyDetails, 
                        ADUserTargetingProperties, ADUserTransparencyRequest, ADUserTransparencyResponse, 
-                       ADVector, ADWatchDog, ADWatchDogManager, DSIDRecord ]
+                       ADWatchDog, ADWatchDogManager, DSIDRecord ]
     objc-ivars:      [ ADAdVector._vectors, ADAdVector._version, ADAnalyticsEvent._event, 
                        ADAnalyticsEvent._timestamp, ADAttributionRequest._adMetadata, 
                        ADAttributionRequest._anonymousDemandiAdID, ADAttributionRequest._attributedByiTunes, 
@@ -67,10 +67,9 @@ exports:
                        ADLogAnalyticsRequest._dPID, ADLogAnalyticsRequest._events, 
                        ADLogAnalyticsRequest._iAdID, ADNetworkController._networkType, 
                        ADNetworkController._notificationTimer, ADNetworkController._store, 
-                       ADOdmlResponse._adVector, ADOdmlResponse._addendum, ADOdmlResponse._has, 
-                       ADOdmlResponse._obfuscatedpTTR, ADOdmlResponse._obfuscationID, 
-                       ADOptOutRequest._dPID, ADOptOutRequest._has, ADOptOutRequest._iAdID, 
-                       ADOptOutRequest._optedOutStatus, ADOptOutRequest._statusChangeTimestamp, 
+                       ADOdmlResponse._adVector, ADOdmlResponse._has, ADOdmlResponse._obfuscatedpTTR, 
+                       ADOdmlResponse._obfuscationID, ADOptOutRequest._dPID, ADOptOutRequest._has, 
+                       ADOptOutRequest._iAdID, ADOptOutRequest._optedOutStatus, ADOptOutRequest._statusChangeTimestamp, 
                        ADOptOutRequest._timezone, ADOptOutRequest._transmitTimestamp, 
                        ADParameter._key, ADParameter._value, ADRoutingInfoMessage._environmentURL, 
                        ADRoutingInfoMessage._protoVersion, ADRoutingInfoMessage._searchType, 
@@ -84,9 +83,9 @@ exports:
                        ADSegmentUpdateRequest._updateSentTime, ADSegmentUpdateResponse._has, 
                        ADSegmentUpdateResponse._idDebug, ADSegmentUpdateResponse._maxSegmentUpdateIntervalInSeconds, 
                        ADSegmentUpdateResponse._segmentRefreshIntervalInSeconds, 
-                       ADSponsoredSearchRequest._enableImagesForDupes, ADSponsoredSearchRequest._has, 
-                       ADSponsoredSearchRequest._isBaseline, ADSponsoredSearchRequest._isTest, 
-                       ADSponsoredSearchRequest._properties, ADTransparencyDetails._transparencyDetailsUnavailableMessage, 
+                       ADSponsoredSearchRequest._has, ADSponsoredSearchRequest._isBaseline, 
+                       ADSponsoredSearchRequest._isTest, ADSponsoredSearchRequest._properties, 
+                       ADTransparencyDetails._transparencyDetailsUnavailableMessage, 
                        ADTransparencyDetails._transparencyRendererPayload, ADTransparencyDetails._transparencyRendererURL, 
                        ADUserTargetingProperties._accountStates, ADUserTargetingProperties._accountTypes, 
                        ADUserTargetingProperties._administrativeArea, ADUserTargetingProperties._advertisingIdentifierMonthResetCount, 

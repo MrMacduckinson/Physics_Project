@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9747D170-7C41-3FDD-8B49-1F2639A88535', 'x86_64: 9747D170-7C41-3FDD-8B49-1F2639A88535' ]
+uuids:           [ 'x86_64: 277F40EC-7E61-359D-B67E-3A7C0984913D', 'x86_64: 277F40EC-7E61-359D-B67E-3A7C0984913D' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/iAdServices.framework/Versions/A/iAdServices'
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ADBKSApplicationStateDescription, _ADClientGlobalStateChangedNotification, 
                        _ADClientSegmentDataErrorDomain, _ADDefaultsBundleID, _ADErrorDomain, 

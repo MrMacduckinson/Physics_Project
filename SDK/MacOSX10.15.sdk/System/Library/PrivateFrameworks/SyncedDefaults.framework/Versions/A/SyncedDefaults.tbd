@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0AEE05C1-1DB7-3A78-9B8A-C354109E09C7', 'x86_64: 0AEE05C1-1DB7-3A78-9B8A-C354109E09C7' ]
+uuids:           [ 'x86_64: 18E8207B-70E0-3CD3-B63B-7C6F723D05E8', 'x86_64: 18E8207B-70E0-3CD3-B63B-7C6F723D05E8' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults'
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _SYDGetAccountsLog, _SYDGetAnalyticsLog, _SYDGetCloudKitLog, 
                        _SYDGetConnectionLog, _SYDGetCoreDataLog, _SYDGetDefaultLog, 

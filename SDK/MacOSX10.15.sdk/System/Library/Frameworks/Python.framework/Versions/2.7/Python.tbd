@@ -1,11 +1,11 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9AD7F618-3F16-3AB9-B105-F015E319DF3F' ]
+uuids:           [ 'x86_64: 9DF5E4AC-53E5-388F-B0CA-C378F6E8E31A' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Python.framework/Versions/2.7/Python'
 current-version: 2.7.16
 compatibility-version: 2.7
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AEDesc_Convert, _AEDesc_New, _AEDesc_NewBorrowed, _BMObj_Convert, 
                        _BMObj_New, _CFArrayRefObj_Convert, _CFArrayRefObj_New, _CFDictionaryRefObj_Convert, 

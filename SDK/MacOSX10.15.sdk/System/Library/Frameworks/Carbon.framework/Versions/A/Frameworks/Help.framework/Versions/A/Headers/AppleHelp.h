@@ -211,10 +211,8 @@ AHLookupAnchor(
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  */
-
-
 extern OSStatus 
-AHRegisterHelpBook(const FSRef * appBundleRef)                              AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4;
+AHRegisterHelpBook(const FSRef * appBundleRef)                AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
 extern OSStatus

@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 63F3BEB9-64D2-398C-9D68-BE1A44EF3606' ]
+uuids:           [ 'x86_64: 40662979-09E8-3C5C-BC09-570D8FD6303C' ]
 platform:        macosx
 install-name:    '/usr/lib/libdz.dylib'
-current-version: 228.100.5
-exports:
+current-version: 228.40.1
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ __dz_init, __dzglobals, _dz_check_policy_exec, _dz_check_policy_kext_load, 
                        _dz_notify_ethcheck, _dz_notify_kext_load, _dz_notify_kext_load_v2, 

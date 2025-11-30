@@ -1,13 +1,12 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0CA8F4EA-12B8-3D2D-ACA1-D322D8090491', 'x86_64: 0CA8F4EA-12B8-3D2D-ACA1-D322D8090491' ]
+uuids:           [ 'x86_64: ED0590B7-AC48-3F7A-BB03-B4B45D9758F0', 'x86_64: ED0590B7-AC48-3F7A-BB03-B4B45D9758F0' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreMaterial.framework/Versions/A/CoreMaterial'
-exports:
+exports:         
   - archs:           [ x86_64 ]
-    allowable-clients: [ CoreMaterialTester, MaterialKit, Materials, PointerUIServices, 
-                         SpringBoard, SpringBoard-Tests, SpringBoardCore, UIKitCore, 
-                         UIKitester ]
+    allowable-clients: [ CoreMaterialTester, MaterialKit, Materials, SpringBoard, 
+                         SpringBoard-Tests, SpringBoardCore, UIKitCore, UIKitester ]
     symbols:         [ _CoreMaterialVersionNumber, _CoreMaterialVersionString, _MTAllMaterialConfigurations, 
                        _MTAllMaterialOverlayConfigurations, _MTAllMaterialValueConfigurations, 
                        _MTAllOrdinalVisualStyles, _MTAllPlatformColorVisualStyles, 

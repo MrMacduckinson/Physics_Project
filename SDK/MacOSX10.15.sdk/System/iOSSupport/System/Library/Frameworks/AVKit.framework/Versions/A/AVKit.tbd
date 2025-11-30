@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 744E6387-1AF4-3713-8FB6-89F93EB9991B' ]
+uuids:           [ 'x86_64: 129CAFF3-818C-3D6B-9BDE-74262A030741' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/AVKit.framework/Versions/A/AVKit'
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AVKitErrorDomain, _AVKitMetadataIdentifierBrandIdentifier, 
                        _AVKitMetadataIdentifierExternalContentIdentifier, _AVKitMetadataIdentifierExternalUserProfileIdentifier, 

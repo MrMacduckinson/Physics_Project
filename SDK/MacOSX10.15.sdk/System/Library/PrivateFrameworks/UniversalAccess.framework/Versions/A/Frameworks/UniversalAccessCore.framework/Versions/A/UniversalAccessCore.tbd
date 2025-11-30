@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 17BB6F9F-DA6B-3667-86B2-A350D08F3F8B' ]
+uuids:           [ 'x86_64: D806DB82-B1EA-3214-B808-F6A1DF90A9A6' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Frameworks/UniversalAccessCore.framework/Versions/A/UniversalAccessCore'
 current-version: 236
-exports:
+exports:         
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Libraries/libUAPreferences.dylib' ]
     symbols:         [ _UAAlternateMouseButtonsEnabled, _UAAlternateMouseButtonsSetEnabled, 
@@ -32,12 +32,6 @@ exports:
                        _UAEventPluginName, _UAEventToNSData, _UAFindMyCursorIsEnabled, 
                        _UAFindMyCursorSetEnabled, _UAFlashScreenIsEnabled, _UAFlashScreenSetEnabled, 
                        _UAGrayscaleIsEnabled, _UAGrayscaleSetEnabled, _UAGrayscaleSynchronizeLegacyPref, 
-                       _UAHeadMouseDefaultInputConfiguration, _UAHeadMouseGetMode, 
-                       _UAHeadMouseGetSensitivity, _UAHeadMouseGetTolerance, _UAHeadMouseInputConfiguration, 
-                       _UAHeadMouseIsEnabled, _UAHeadMousePauseResumeSwitchEnabled, 
-                       _UAHeadMousePauseResumeSwitchSetEnabled, _UAHeadMouseSetEnabled, 
-                       _UAHeadMouseSetInputConfiguration, _UAHeadMouseSetMode, _UAHeadMouseSetSensitivity, 
-                       _UAHeadMouseSetSwitches, _UAHeadMouseSetTolerance, _UAHeadMouseSwitches, 
                        _UAHoverTextCopyBorderColor, _UAHoverTextCopyCustomBackgroundColor, 
                        _UAHoverTextCopyCustomCursorColor, _UAHoverTextCopyCustomFontColor, 
                        _UAHoverTextCopyElementHighlightColor, _UAHoverTextCopyFont, 
@@ -148,15 +142,14 @@ exports:
                        _kAXVisualSupportAgentZoomFocusRectXKey, _kAXVisualSupportAgentZoomFocusRectYKey, 
                        _kUADFRHUDMachServiceName, _uaEventFromCGEventRecord, _uaEventFromCGEventRecordHotKey, 
                        _uaEventFromCGEventRecordSystem ]
-    objc-classes:    [ UAExpressionUserSwitch, UAHIDUserSwitch, UALoginWindowFeature, 
-                       UALoginWindowFeatureManager, UASettings, UASpeechSettings, 
-                       UAUserSwitch, UAZoomSettings ]
+    objc-classes:    [ UAHIDUserSwitch, UALoginWindowFeature, UALoginWindowFeatureManager, 
+                       UASettings, UASpeechSettings, UAUserSwitch, UAZoomSettings ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 54CB7D4E-FE0D-39FB-8EE1-00D9AEE61062' ]
+uuids:           [ 'x86_64: 9CADC754-A484-3556-AFBB-E35A2080F17E' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Libraries/libUAPreferences.dylib'
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _UAAXShortcutExposedFeatures, _UAAlternateMouseButtonsEnabledKey, 
                        _UAAssistiveControlAutomaticShiftEnabledKey, _UAAssistiveControlAutomaticSpaceEnabledKey, 
@@ -179,16 +172,14 @@ exports:
                        _UADwellTopRightCornerActionTypeKey, _UADwellWaitTimeAssistiveControlUIKey, 
                        _UADwellWaitTimeDefaultActionKey, _UADwellWaitTimeZoomKey, 
                        _UADwellZoomEnabledKey, _UAFlashScreenEnabledKey, _UAGrayscaleDidMigrateToDisplayFiltersKey, 
-                       _UAGrayscaleKey, _UAHeadMouseEnabledKey, _UAHeadMouseInputConfigurationKey, 
-                       _UAHeadMouseModeKey, _UAHeadMousePauseResumeSwitchEnabledKey, 
-                       _UAHeadMouseSensitivityKey, _UAHeadMouseToleranceKey, _UAHoverTextBorderColorKey, 
-                       _UAHoverTextCursorWidthKey, _UAHoverTextCustomBackgroundColorKey, 
-                       _UAHoverTextCustomCursorColorKey, _UAHoverTextCustomFontColorKey, 
-                       _UAHoverTextElementHighlightColorKey, _UAHoverTextEnabledKey, 
-                       _UAHoverTextFontKey, _UAHoverTextFontSizeKey, _UAHoverTextFontStyleKey, 
-                       _UAHoverTextHighlightCurrentElementKey, _UAHoverTextIsAlwaysOnKey, 
-                       _UAHoverTextIsHoveringAndVisibleKey, _UAHoverTextLinesBeforeScrollingKey, 
-                       _UAHoverTextMaxWidthKey, _UAHoverTextModifierKey, _UAHoverTextNavigateLinesWithinWindowKey, 
+                       _UAGrayscaleKey, _UAHoverTextBorderColorKey, _UAHoverTextCursorWidthKey, 
+                       _UAHoverTextCustomBackgroundColorKey, _UAHoverTextCustomCursorColorKey, 
+                       _UAHoverTextCustomFontColorKey, _UAHoverTextElementHighlightColorKey, 
+                       _UAHoverTextEnabledKey, _UAHoverTextFontKey, _UAHoverTextFontSizeKey, 
+                       _UAHoverTextFontStyleKey, _UAHoverTextHighlightCurrentElementKey, 
+                       _UAHoverTextIsAlwaysOnKey, _UAHoverTextIsHoveringAndVisibleKey, 
+                       _UAHoverTextLinesBeforeScrollingKey, _UAHoverTextMaxWidthKey, 
+                       _UAHoverTextModifierKey, _UAHoverTextNavigateLinesWithinWindowKey, 
                        _UAHoverTextShowWhenTypingFontSizeKey, _UAHoverTextShowWhenTypingKey, 
                        _UAHoverTextTypingWindowOriginKey, _UAHoverTextTypingWindowPositionKey, 
                        _UAHoverTextZoomStateKey, _UAKeyboardAccessEnabledKey, _UAKeyboardZoomEnabledKey, 
@@ -241,11 +232,11 @@ exports:
                        _UATrackpadGestureZoomPreviouslyEnabledKey, _UATypingEchoEnabledKey, 
                        _UATypingEchoOptionsKey, _UAUseShortcutKeysKey, _UAUserAssignableHotKeys, 
                        _UAUserSwitchActionKey, _UAUserSwitchActionTypeKey, _UAUserSwitchCustomNameIsLocalizedKey, 
-                       _UAUserSwitchCustomNameKey, _UAUserSwitchExpressionKey, _UAUserSwitchHIDKey, 
-                       _UAUserSwitchTriggerTypeKey, _UAUserSwitchUUIDStringKey, _UAUserSwitchesKey, 
-                       _UAVirtualKeyboardCornerActionTypeKey, _UAVirtualKeyboardEnabledKey, 
-                       _UAVirtualKeyboardHideUIEnabledKey, _UAVirtualKeyboardHideUITimeoutKey, 
-                       _UAVirtualKeyboardHideUITransparencyLevelKey, _UAVirtualKeyboardHomePanelFollowTriggeredHotCornerEnabledKey, 
+                       _UAUserSwitchCustomNameKey, _UAUserSwitchHIDKey, _UAUserSwitchTriggerTypeKey, 
+                       _UAUserSwitchUUIDStringKey, _UAUserSwitchesKey, _UAVirtualKeyboardCornerActionTypeKey, 
+                       _UAVirtualKeyboardEnabledKey, _UAVirtualKeyboardHideUIEnabledKey, 
+                       _UAVirtualKeyboardHideUITimeoutKey, _UAVirtualKeyboardHideUITransparencyLevelKey, 
+                       _UAVirtualKeyboardHomePanelFollowTriggeredHotCornerEnabledKey, 
                        _UAVirtualKeyboardMouseOptionKey, _UAVirtualKeyboardPlaySoundsKey, 
                        _UAVirtualKeyboardThemeKey, _UAVoiceOverEnabled, _UAWhiteOnBlackKey, 
                        _UAZoomDesiredScaleKey, _UAZoomDisplayEnabledKey, _UAZoomDisplayIDKey, 

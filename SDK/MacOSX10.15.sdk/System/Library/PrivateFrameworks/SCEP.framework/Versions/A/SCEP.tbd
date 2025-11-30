@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D6992041-C4AD-3830-8E1A-B058A8B9FE50' ]
+uuids:           [ 'x86_64: A7024B96-ECDA-3BE4-B212-01B90BE28D28' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SCEP.framework/Versions/A/SCEP'
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AddCertToCRL, _BuildChallengePassword, _CFDataToCRL, _CFDataToCSR, 
                        _CRLToCFData, _ConvertIdentityToCertAndKey, _CopyCFDataToBIO, 

@@ -1,11 +1,11 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 507D5812-9CB4-3C94-938C-59ED2B370818', 'x86_64: 507D5812-9CB4-3C94-938C-59ED2B370818' ]
+uuids:           [ 'x86_64: 415AAD69-0A45-3B21-9698-D8798A48E5A2', 'x86_64: 415AAD69-0A45-3B21-9698-D8798A48E5A2' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GraphVisualizer.framework/Versions/A/GraphVisualizer'
 current-version: 0
 compatibility-version: 0
-exports:
+exports:         
   - archs:           [ x86_64 ]
     objc-classes:    [ GVEdge, GVGraph, GVInternalRenderer, GVLayout, GVNode ]
     objc-ivars:      [ GVNode.h, GVNode.inNodes, GVNode.inPriority, GVNode.index, 

@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C6FF949C-1636-3D00-9BB7-FB5ACCE6CA3F' ]
+uuids:           [ 'x86_64: F0591311-D6F4-372A-BDCF-9C16D17BC31A' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/FMClient.framework/Versions/A/FMClient'
 swift-abi-version: 7
-exports:
+exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ FMIPClientXPCService, FMIPSiriBackendPlugin, FindMyiPhoneIntentsExtension, 
                          fmclienttool ]

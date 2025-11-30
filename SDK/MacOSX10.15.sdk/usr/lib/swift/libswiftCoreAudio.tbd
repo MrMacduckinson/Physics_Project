@@ -1,11 +1,11 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2886B49B-6D68-3F12-B71F-704940D0A86F', 'x86_64: 2886B49B-6D68-3F12-B71F-704940D0A86F' ]
+uuids:           [ 'x86_64: CC92A966-69EE-3E22-91F4-F132A2DD6F15', 'x86_64: CC92A966-69EE-3E22-91F4-F132A2DD6F15' ]
 platform:        zippered
 install-name:    '/usr/lib/swift/libswiftCoreAudio.dylib'
 current-version: 0
 swift-abi-version: 7
-exports:
+exports:         
   - archs:           [ x86_64 ]
     symbols:         [ '$ld$install_name$os10.10$@rpath/libswiftCoreAudio.dylib', 
                        '$ld$install_name$os10.11$@rpath/libswiftCoreAudio.dylib', 

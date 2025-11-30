@@ -12,14 +12,11 @@
 
 typedef NS_ENUM(NSUInteger, PKPassType) {
     PKPassTypeBarcode,
-    PKPassTypeSecureElement API_AVAILABLE(macos(10.15.4), ios(13.4), watchos(6.2)),
-    PKPassTypePayment API_DEPRECATED("Use PKPassTypeSecureElement instead", macos(10.12, API_TO_BE_DEPRECATED), ios(8.0, API_TO_BE_DEPRECATED), watchos(3.0, API_TO_BE_DEPRECATED)) = PKPassTypeSecureElement,
-    
+    PKPassTypePayment,
     PKPassTypeAny = ~(NSUInteger)0
 } API_AVAILABLE(ios(8.0), watchos(3.0));
 
 @class PKPaymentPass;
-@class PKSecureElementPass;
 
 #if TARGET_OS_IPHONE
 @class UIImage;
@@ -31,8 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (nullable instancetype)initWithData:(NSData *)data error:(NSError **)error;
 
 @property (nonatomic, assign, readonly) PKPassType           passType API_AVAILABLE(ios(8.0), watchos(3.0));
-@property (nonatomic, readonly, nullable) PKPaymentPass      *paymentPass API_DEPRECATED("Use -[PKPass secureElementPass] instead", macos(10.12, API_TO_BE_DEPRECATED), ios(8.0, API_TO_BE_DEPRECATED), watchos(3.0, API_TO_BE_DEPRECATED));
-@property (nonatomic, readonly, nullable) PKSecureElementPass *secureElementPass API_AVAILABLE(macos(10.15.4), ios(13.4), watchos(6.2));
+@property (nonatomic, readonly, nullable) PKPaymentPass      *paymentPass API_AVAILABLE(ios(8.0), watchos(3.0));
 
 @property (nonatomic, copy, readonly) NSString               *serialNumber;
 @property (nonatomic, copy, readonly) NSString               *passTypeIdentifier;
