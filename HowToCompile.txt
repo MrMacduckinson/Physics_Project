@@ -1,6 +1,6 @@
 cmake .. \
   -DCMAKE_OSX_SYSROOT=/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk \
-  -DCMAKE_OSX_DEPLOYMENT_TARGET=10.8 \
-  -DBUILD_FOR_10_8=ON
+  -DCMAKE_OSX_DEPLOYMENT_TARGET=10.7 \
+  -DBUILD_FOR_10_7=ON
 
 cmake --build .

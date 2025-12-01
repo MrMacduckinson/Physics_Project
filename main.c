@@ -1,8 +1,13 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-#define SDL_MAIN_HANDLED
 #include <SDL/SDL.h>
+
+// SDL 1.2 headers unconditionally #define main SDL_main on macOS.
+// We need to undefine it when not using SDL's entry point redirection.
+#ifndef USE_SDL_MAIN
+#undef main
+#endif
 
 struct Player
 {
@@ -138,8 +143,14 @@ int sdl_app(int argc, char* argv[])
     SDL_Quit();
     return 0;
 }
-
+#ifdef USE_SDL_MAIN
+int SDL_main(int argc, char* argv[])
+{
+    return sdl_app(argc, argv);
+}
+#else
 int main(int argc, char* argv[])
 {
     return sdl_app(argc, argv);
 }
+#endif

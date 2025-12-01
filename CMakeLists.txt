@@ -11,12 +11,12 @@ if(BUILD_FOR_10_15)
     endif()
 
     set(CMAKE_OSX_SYSROOT "${MACOSX_10_15_SDK}" CACHE PATH "Sysroot for macOS 10.15" FORCE)
-    set(CMAKE_OSX_DEPLOYMENT_TARGET "10.8" CACHE STRING "Deployment target" FORCE)
+    set(CMAKE_OSX_DEPLOYMENT_TARGET "10.7" CACHE STRING "Deployment target" FORCE)
     # 10.15 CLT SDK is x86_64\-only
     set(CMAKE_OSX_ARCHITECTURES "x86_64" CACHE STRING "Architectures to build for (10.15 SDK is x86_64-only)" FORCE)
 else()
     # Default build (modern macOS, still 10.15 min)
-    set(CMAKE_OSX_DEPLOYMENT_TARGET "10.15" CACHE STRING "Deployment target" FORCE)
+    set(CMAKE_OSX_DEPLOYMENT_TARGET "11.0" CACHE STRING "Deployment target" FORCE)
     set(CMAKE_OSX_ARCHITECTURES "x86_64" CACHE STRING "Architectures to build for" FORCE)
     # Let AppleClang pick the default sysroot (`/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk`)
 endif()
@@ -128,14 +128,18 @@ if(APPLE)
         # Extra safety: force sysroot and min version for the main target
         target_compile_options(${EXECUTABLE_NAME} PRIVATE
                 "-isysroot" "${CMAKE_OSX_SYSROOT}"
-                "-mmacosx-version-min=10.8"
+                "-mmacosx-version-min=10.7"
         )
         target_link_options(${EXECUTABLE_NAME} PRIVATE
                 "-isysroot" "${CMAKE_OSX_SYSROOT}"
-                "-mmacosx-version-min=10.8"
+                "-mmacosx-version-min=10.7"
         )
     endif()
-    target_link_options(${EXECUTABLE_NAME} PRIVATE "-Wl,-e,_SDL_main")
+    if(CMAKE_OSX_DEPLOYMENT_TARGET VERSION_GREATER_EQUAL "10.8")
+        target_link_options(${EXECUTABLE_NAME} PRIVATE "-Wl,-e,_SDL_main")
+        target_compile_definitions(${EXECUTABLE_NAME} PRIVATE USE_SDL_MAIN)
+    endif()
 endif()
+
 
 target_link_libraries(${EXECUTABLE_NAME} PRIVATE SDL12_compat_imported)
