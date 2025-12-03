@@ -1,10 +1,13 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+#ifdef BUILD_FOR_10_4
+#import <Foundation/Foundation.h>
+#import <AppKit/AppKit.h>
+#endif
+
 #include <SDL/SDL.h>
 
-// SDL 1.2 headers unconditionally #define main SDL_main on macOS.
-// We need to undefine it when not using SDL's entry point redirection.
 #ifndef USE_SDL_MAIN
 #undef main
 #endif
@@ -32,20 +35,30 @@ void drawRect(SDL_Surface* screen, float x, float y, float size, Uint8 r, Uint8 
 
 int sdl_app(int argc, char* argv[])
 {
-    if (SDL_Init(SDL_INIT_VIDEO) != 0)
-    {
-        fprintf(stderr, "SDL_Init failed: %s\n", SDL_GetError());
+#ifdef BUILD_FOR_10_4
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    [NSApplication sharedApplication];
+    [NSApp finishLaunching];
+#endif
+
+    if (SDL_Init(SDL_INIT_VIDEO) < 0) {
+        fprintf(stderr, "SDL initialization failed: %s\n", SDL_GetError());
+#ifdef BUILD_FOR_10_4
+        [pool release];
+#endif
         return 1;
     }
 
     const int winW = 800;
     const int winH = 600;
 
-    SDL_Surface* screen = SDL_SetVideoMode(winW, winH, 32, SDL_SWSURFACE);
-    if (!screen)
-    {
+    SDL_Surface *screen = SDL_SetVideoMode(winW, winH, 32, SDL_SWSURFACE);
+    if (!screen) {
         fprintf(stderr, "Failed to set video mode: %s\n", SDL_GetError());
         SDL_Quit();
+#ifdef BUILD_FOR_10_4
+        [pool release];
+#endif
         return 1;
     }
 
@@ -55,29 +68,19 @@ int sdl_app(int argc, char* argv[])
     player.size = 40.0f;
     player.x = (winW - player.size) * 0.5f;
     player.y = (winH - player.size) * 0.5f;
-    player.vx = 0.0f;
-    player.vy = 0.0f;
 
     bool running = true;
-    bool keyLeft  = false;
-    bool keyRight = false;
-    bool keyUp    = false;
-    bool keyDown  = false;
-
-    const float speed = 200.0f; // pixels per second
-
+    bool keyLeft = false, keyRight = false, keyUp = false, keyDown = false;
+    const float speed = 200.0f;
     Uint32 lastTicks = SDL_GetTicks();
 
     while (running)
     {
-        // --- Input ---
         SDL_Event event;
         while (SDL_PollEvent(&event))
         {
             if (event.type == SDL_QUIT)
-            {
                 running = false;
-            }
             else if (event.type == SDL_KEYDOWN)
             {
                 switch (event.key.keysym.sym)
@@ -103,46 +106,41 @@ int sdl_app(int argc, char* argv[])
             }
         }
 
-        // --- Timing ---
         Uint32 now = SDL_GetTicks();
         float dt = (now - lastTicks) / 1000.0f;
         if (dt > 0.05f) dt = 0.05f;
         lastTicks = now;
 
-        // --- Update velocity from input ---
         player.vx = 0.0f;
         player.vy = 0.0f;
-
         if (keyLeft)  player.vx -= speed;
         if (keyRight) player.vx += speed;
         if (keyUp)    player.vy -= speed;
         if (keyDown)  player.vy += speed;
 
-        // --- Integrate position ---
         player.x += player.vx * dt;
         player.y += player.vy * dt;
 
-        // --- Clamp to window ---
         if (player.x < 0.0f) player.x = 0.0f;
         if (player.x + player.size > winW) player.x = winW - player.size;
         if (player.y < 0.0f) player.y = 0.0f;
         if (player.y + player.size > winH) player.y = winH - player.size;
 
-        // --- Render ---
-        // Clear screen (dark background)
         Uint32 bgColor = SDL_MapRGB(screen->format, 25, 25, 40);
         SDL_FillRect(screen, NULL, bgColor);
 
-        // Draw player as a green square
         drawRect(screen, player.x, player.y, player.size, 25, 230, 50);
 
-        // Present
         SDL_Flip(screen);
     }
 
     SDL_Quit();
+#ifdef BUILD_FOR_10_4
+    [pool release];
+#endif
     return 0;
 }
+
 #ifdef USE_SDL_MAIN
 int SDL_main(int argc, char* argv[])
 {
