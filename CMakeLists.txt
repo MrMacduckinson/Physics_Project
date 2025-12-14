@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 # Build options
-option(BUILD_FOR_10_15 "Build for macOS 10.15 with custom SDK" OFF)
+option(BUILD_FOR_10_15 "Build for macOS 10.15 with custom SDK" ON)
 option(BUILD_FOR_10_4 "Build for macOS 10.4-10.6 Intel with SDL 1.2" OFF)
 
 # Configure SDK and architectures *before* project()
