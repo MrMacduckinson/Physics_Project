@@ -50,6 +50,8 @@ if(NOT IS_SUBBUILD)
                     -DBUILD_FOR_11_0=ON
                     -DBUILD_FOR_10_7=OFF
                     -DBUILD_FOR_10_4=OFF
+                    -DBUILD_FOR_M68K=OFF
+                    -DBUILD_FOR_PPC=OFF
                     -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
                 BUILD_ALWAYS ON
                 INSTALL_COMMAND ""
@@ -65,6 +67,8 @@ if(NOT IS_SUBBUILD)
                     -DBUILD_FOR_11_0=OFF
                     -DBUILD_FOR_10_7=ON
                     -DBUILD_FOR_10_4=OFF
+                    -DBUILD_FOR_M68K=OFF
+                    -DBUILD_FOR_PPC=OFF
                     -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
                 BUILD_ALWAYS ON
                 INSTALL_COMMAND ""
