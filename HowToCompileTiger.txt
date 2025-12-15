@@ -1,3 +1,0 @@
-rm -rf build_10_4
-cmake -DBUILD_FOR_10_4=ON -S . -B build_10_4
-cmake --build build_10_4

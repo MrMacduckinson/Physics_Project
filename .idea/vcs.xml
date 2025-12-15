@@ -2,10 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Retro68/Retro68" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Retro68/Retro68/multiversal" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/library_sources/SDL12_mac" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/library_sources/SDL12_mixer_mac" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/worship-vector" vcs="Git" />
   </component>
 </project>

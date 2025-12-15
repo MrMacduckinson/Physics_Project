@@ -1,17 +1,32 @@
-#include <stdio.h>
-#include <stdbool.h>
+/*
+This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 2 of the License, or
+	(at your option) any later version.
 
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+#include <stdio.h>
+
+// Mac OS X 10.4 specific includes for bundle resource lookup
 #ifdef BUILD_FOR_10_4
 #import <Foundation/Foundation.h>
 #import <AppKit/AppKit.h>
 #endif
+
 
 #include <SDL/SDL.h>
 
 #ifndef USE_SDL_MAIN
 #undef main
 #endif
-#include <stdio.h>
+
 #include <stdlib.h>
 #include <string.h>
 
@@ -19,6 +34,8 @@
 #include <time.h>
 
 
+// CONSTANTS
+//	Define the piece shapes
 static const int base_piece_x[7][4] = {
 	{ -1, 0, 1, 2 },	// line
 	{ -1, 0, 1, 1 },	// backwards L
@@ -58,6 +75,24 @@ static int in(const int x, const int y,
 static SDL_Surface* load_image(const char* path)
 {
 	SDL_Surface* img = SDL_LoadBMP(path);
+
+#ifdef BUILD_FOR_10_4
+	if (!img) {
+		// Try to find the file inside the app bundle Resources directory
+		NSString *nsPath = [NSString stringWithUTF8String:path];
+		NSString *dir = [nsPath stringByDeletingLastPathComponent];
+		NSString *base = [[nsPath lastPathComponent] stringByDeletingPathExtension];
+		NSString *ext = [nsPath pathExtension];
+
+		NSString *resPath = [[NSBundle mainBundle] pathForResource:base
+		                                                    ofType:(ext.length ? ext : nil)
+		                                               inDirectory:dir.length ? dir : nil];
+		if (resPath) {
+			img = SDL_LoadBMP([resPath UTF8String]);
+		}
+	}
+#endif
+
 	if (! img)
 	{
 		fprintf(stderr, "load_image: ERROR: Failed to load image '%s': %s\n",
@@ -742,8 +777,14 @@ int sdl_app(int argc, char* argv[])
 	//	(this is already set by atexit, above)
 	//SDL_Quit();
 
+#ifdef BUILD_FOR_10_4
+    [pool release];
+#endif
+
 	return 0;
 }
+
+#if defined(BUILD_FOR_10_4) || defined(BUILD_FOR_10_7) || defined(BUILD_FOR_11_0)
 
 #ifdef USE_SDL_MAIN
 int SDL_main(int argc, char* argv[])
@@ -755,4 +796,19 @@ int main(int argc, char* argv[])
 {
     return sdl_app(argc, argv);
 }
+#endif
+
+#else
+
+#ifdef __MACOS__
+int SDL_main(int argc, char* argv[])
+{
+	return sdl_app(argc, argv);
+}
+#else
+int main(int argc, char* argv[])
+{
+	return sdl_app(argc, argv);
+}
+#endif
 #endif

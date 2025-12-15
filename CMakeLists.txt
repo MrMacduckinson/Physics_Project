@@ -1,11 +1,144 @@
 cmake_minimum_required(VERSION 3.16)
 
-# Build options
-option(BUILD_FOR_10_15 "Build for macOS 10.15 with custom SDK" ON)
-option(BUILD_FOR_10_4 "Build for macOS 10.4-10.6 Intel with SDL 1.2" OFF)
+# ============================================================================
+# Multi-target build options - enable as many as you want
+# ============================================================================
+option(BUILD_FOR_11_0 "Build for macOS 11.0+ (arm64)" ON)
+option(BUILD_FOR_10_7 "Build for macOS 10.7+ with 10.15 SDK (x86_64)" ON)
+option(BUILD_FOR_10_4 "Build for macOS 10.4-10.6 Intel with SDL 1.2 (i386)" ON)
+option(BUILD_FOR_PPC "Build for classic Mac PowerPC with Retro68" ON)
+option(BUILD_FOR_M68K "Build for classic Mac m68k with Retro68" ON)
+
+# If this is a multi-build invocation, delegate to ExternalProject
+if(NOT DEFINED IS_SUBBUILD)
+    set(IS_SUBBUILD OFF)
+endif()
+
+if(NOT IS_SUBBUILD)
+    # Count how many targets are enabled
+    set(_build_count 0)
+    if(BUILD_FOR_11_0)
+        math(EXPR _build_count "${_build_count} + 1")
+    endif()
+    if(BUILD_FOR_10_7)
+        math(EXPR _build_count "${_build_count} + 1")
+    endif()
+    if(BUILD_FOR_10_4)
+        math(EXPR _build_count "${_build_count} + 1")
+    endif()
+    if(BUILD_FOR_M68K)
+        math(EXPR _build_count "${_build_count} + 1")
+    endif()
+    if(BUILD_FOR_PPC)
+        math(EXPR _build_count "${_build_count} + 1")
+    endif()
+
+    if(_build_count GREATER 1)
+        # Multi-target build: create wrapper project that builds each target separately
+        project(Physics_Project_MultiTarget NONE)
+        include(ExternalProject)
+
+        set(SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
+        set(PARENT_BINARY_DIR "${CMAKE_CURRENT_BINARY_DIR}")
+
+        if(BUILD_FOR_11_0)
+            ExternalProject_Add(Physics_Project_11_0
+                SOURCE_DIR "${SOURCE_DIR}"
+                BINARY_DIR "${PARENT_BINARY_DIR}/arm64_11.0"
+                CMAKE_ARGS
+                    -DIS_SUBBUILD=ON
+                    -DBUILD_FOR_11_0=ON
+                    -DBUILD_FOR_10_7=OFF
+                    -DBUILD_FOR_10_4=OFF
+                    -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+                BUILD_ALWAYS ON
+                INSTALL_COMMAND ""
+            )
+        endif()
+
+        if(BUILD_FOR_10_7)
+            ExternalProject_Add(Physics_Project_10_7
+                SOURCE_DIR "${SOURCE_DIR}"
+                BINARY_DIR "${PARENT_BINARY_DIR}/x86_64_10.7"
+                CMAKE_ARGS
+                    -DIS_SUBBUILD=ON
+                    -DBUILD_FOR_11_0=OFF
+                    -DBUILD_FOR_10_7=ON
+                    -DBUILD_FOR_10_4=OFF
+                    -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+                BUILD_ALWAYS ON
+                INSTALL_COMMAND ""
+            )
+        endif()
+
+        if(BUILD_FOR_10_4)
+            ExternalProject_Add(Physics_Project_10_4
+                SOURCE_DIR "${SOURCE_DIR}"
+                BINARY_DIR "${PARENT_BINARY_DIR}/i386_10.4"
+                CMAKE_ARGS
+                    -DIS_SUBBUILD=ON
+                    -DBUILD_FOR_11_0=OFF
+                    -DBUILD_FOR_10_7=OFF
+                    -DBUILD_FOR_10_4=ON
+                    -DBUILD_FOR_M68K=OFF
+                    -DBUILD_FOR_PPC=OFF
+                    -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+                BUILD_ALWAYS ON
+                INSTALL_COMMAND ""
+            )
+        endif()
+
+        if(BUILD_FOR_M68K)
+            ExternalProject_Add(Physics_Project_M68K
+                SOURCE_DIR "${SOURCE_DIR}"
+                BINARY_DIR "${PARENT_BINARY_DIR}/m68k"
+                CMAKE_ARGS
+                    -DIS_SUBBUILD=ON
+                    -DBUILD_FOR_11_0=OFF
+                    -DBUILD_FOR_10_7=OFF
+                    -DBUILD_FOR_10_4=OFF
+                    -DBUILD_FOR_M68K=ON
+                    -DBUILD_FOR_PPC=OFF
+                    -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+                BUILD_ALWAYS ON
+                INSTALL_COMMAND ""
+            )
+        endif()
+
+        if(BUILD_FOR_PPC)
+            ExternalProject_Add(Physics_Project_PPC
+                SOURCE_DIR "${SOURCE_DIR}"
+                BINARY_DIR "${PARENT_BINARY_DIR}/ppc"
+                CMAKE_ARGS
+                    -DIS_SUBBUILD=ON
+                    -DBUILD_FOR_11_0=OFF
+                    -DBUILD_FOR_10_7=OFF
+                    -DBUILD_FOR_10_4=OFF
+                    -DBUILD_FOR_M68K=OFF
+                    -DBUILD_FOR_PPC=ON
+                    -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+                BUILD_ALWAYS ON
+                INSTALL_COMMAND ""
+            )
+        endif()
+
+        # Stop here - the real builds happen in subprojects
+        return()
+    endif()
+    # else: single target build, continue normally
+endif()
+
+# ============================================================================
+# Single-target build configuration
+# ============================================================================
 
 # Configure SDK and architectures *before* project()
-if(BUILD_FOR_10_4)
+if(BUILD_FOR_M68K OR BUILD_FOR_PPC)
+    # Retro68 builds don't use standard CMake project setup
+    # We'll handle these separately after project() is called
+    project(Physics_Project NONE)
+
+elseif(BUILD_FOR_10_4)
     set(MACOSX_10_4_SDK "/Library/Developer/CommandLineTools/SDKs/MacOSX10.4u.sdk")
     if(NOT EXISTS "${MACOSX_10_4_SDK}")
         message(FATAL_ERROR "MacOSX10.4u.sdk not found at ${MACOSX_10_4_SDK}")
@@ -24,7 +157,7 @@ if(BUILD_FOR_10_4)
         message(FATAL_ERROR "SDL 1.2 source not found at ${SDL12_SOURCE_DIR}")
     endif()
 
-elseif(BUILD_FOR_10_15)
+elseif(BUILD_FOR_10_7)
     set(MACOSX_10_15_SDK "/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk")
     if(NOT EXISTS "${MACOSX_10_15_SDK}")
         message(FATAL_ERROR "MacOSX10.15.sdk not found at ${MACOSX_10_15_SDK}")
@@ -33,14 +166,91 @@ elseif(BUILD_FOR_10_15)
     set(CMAKE_OSX_SYSROOT "${MACOSX_10_15_SDK}" CACHE PATH "Sysroot for macOS 10.15" FORCE)
     set(CMAKE_OSX_DEPLOYMENT_TARGET "10.7" CACHE STRING "Deployment target" FORCE)
     set(CMAKE_OSX_ARCHITECTURES "x86_64" CACHE STRING "Architectures to build for (10.15 SDK is x86_64-only)" FORCE)
-else()
+
+elseif(BUILD_FOR_11_0)
+    # Modern macOS build (11.0+, arm64 preferred)
     set(CMAKE_OSX_DEPLOYMENT_TARGET "11.0" CACHE STRING "Deployment target" FORCE)
-    set(CMAKE_OSX_ARCHITECTURES "x86_64" CACHE STRING "Architectures to build for" FORCE)
+    # Detect host macOS version and choose architecture accordingly
+    if(APPLE)
+        execute_process(COMMAND sw_vers -productVersion
+                        OUTPUT_VARIABLE _host_macos_ver
+                        OUTPUT_STRIP_TRAILING_WHITESPACE)
+        set(_preferred_arch "arm64")
+        if(_host_macos_ver)
+            string(REGEX REPLACE "^([0-9]+).*" "\\1" _host_major "${_host_macos_ver}")
+            if(_host_major AND _host_major GREATER_EQUAL 11)
+                set(_preferred_arch "arm64")
+            else()
+                set(_preferred_arch "x86_64")
+            endif()
+        endif()
+        set(CMAKE_OSX_ARCHITECTURES "${_preferred_arch}" CACHE STRING "Architectures to build for" FORCE)
+    else()
+        set(CMAKE_OSX_ARCHITECTURES "arm64" CACHE STRING "Architectures to build for" FORCE)
+    endif()
+
+else()
+    message(FATAL_ERROR "No build target selected. Please enable at least one of: BUILD_FOR_11_0, BUILD_FOR_10_7, BUILD_FOR_10_4")
 endif()
+
+# ============================================================================
+# M68K and PPC Retro68 builds - these use Makefiles instead of CMake
+# ============================================================================
+if(BUILD_FOR_M68K OR BUILD_FOR_PPC)
+    if(BUILD_FOR_M68K)
+        set(RETRO_BUILD_DIR "${CMAKE_BINARY_DIR}/m68k")
+        set(MAKEFILE_NAME "Makefile.macm68k")
+        set(REQUIRED_FILES "main.c" "Retro68APPL.r" "${MAKEFILE_NAME}")
+    elseif(BUILD_FOR_PPC)
+        set(RETRO_BUILD_DIR "${CMAKE_BINARY_DIR}/ppc")
+        set(MAKEFILE_NAME "Makefile.mac")
+        set(REQUIRED_FILES "main.c" "SDL.r" "${MAKEFILE_NAME}")
+    endif()
+
+    # Create build directory
+    file(MAKE_DIRECTORY "${RETRO_BUILD_DIR}")
+
+    # Copy necessary files to build directory
+    foreach(file_to_copy ${REQUIRED_FILES})
+        configure_file(
+            "${CMAKE_CURRENT_SOURCE_DIR}/${file_to_copy}"
+            "${RETRO_BUILD_DIR}/${file_to_copy}"
+            COPYONLY
+        )
+    endforeach()
+
+    # Copy tetimg directory
+    file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/tetimg"
+         DESTINATION "${RETRO_BUILD_DIR}")
+
+    # Create a custom target that runs the Makefile
+    if(BUILD_FOR_M68K)
+        add_custom_target(build_m68k ALL
+            COMMAND make -f ${MAKEFILE_NAME}
+            WORKING_DIRECTORY "${RETRO_BUILD_DIR}"
+            COMMENT "Building M68K target using ${MAKEFILE_NAME}"
+            VERBATIM
+        )
+    elseif(BUILD_FOR_PPC)
+        add_custom_target(build_ppc ALL
+            COMMAND make -f ${MAKEFILE_NAME}
+            WORKING_DIRECTORY "${RETRO_BUILD_DIR}"
+            COMMENT "Building PPC target using ${MAKEFILE_NAME}"
+            VERBATIM
+        )
+    endif()
+
+    # Don't continue with normal build process
+    return()
+endif()
+
+# ============================================================================
+# Continue with normal CMake builds (10.4, 10.7, 11.0)
+# ============================================================================
 
 project(Physics_Project LANGUAGES C OBJC)
 
-if(NOT BUILD_FOR_10_15 AND NOT BUILD_FOR_10_4)
+if(NOT BUILD_FOR_10_7 AND NOT BUILD_FOR_10_4)
     set(CMAKE_CXX_STANDARD 20)
     set(CMAKE_CXX_STANDARD_REQUIRED ON)
     set(CMAKE_CXX_EXTENSIONS OFF)
@@ -48,10 +258,11 @@ endif()
 
 # Per-configuration settings
 if(BUILD_FOR_10_4)
-    set(PROJECT_LIB_DIR "${CMAKE_CURRENT_SOURCE_DIR}/lib_10_4")
-    set(PROJECT_INCLUDE_SDL_DIR "${CMAKE_CURRENT_SOURCE_DIR}/include_10_4/SDL")
+    # Put generated libs/includes inside the build tree to avoid changing source
+    set(PROJECT_LIB_DIR "${CMAKE_BINARY_DIR}/lib_10_4")
+    set(PROJECT_INCLUDE_SDL_DIR "${CMAKE_BINARY_DIR}/include_10_4/SDL")
     set(EXECUTABLE_NAME "Physics_Project_10_4")
-    set(INCLUDE_BASE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/include_10_4")
+    set(INCLUDE_BASE_DIR "${CMAKE_BINARY_DIR}/include_10_4")
 
     # Build SDL 1.2 using ExternalProject
     include(ExternalProject)
@@ -78,17 +289,48 @@ if(BUILD_FOR_10_4)
     file(MAKE_DIRECTORY "${SDL12_INSTALL_PREFIX}/lib")
     file(MAKE_DIRECTORY "${SDL12_INSTALL_PREFIX}/include")
 
+    # Ensure project-level lib/include dirs exist for the 10.4 target and copy
+    # the SDL 1.2 install into them after the ExternalProject installs.
+    file(MAKE_DIRECTORY "${PROJECT_LIB_DIR}")
+    file(MAKE_DIRECTORY "${PROJECT_INCLUDE_SDL_DIR}")
 
-elseif(BUILD_FOR_10_15)
-    set(PROJECT_LIB_DIR "${CMAKE_CURRENT_SOURCE_DIR}/lib_10_15")
-    set(PROJECT_INCLUDE_SDL_DIR "${CMAKE_CURRENT_SOURCE_DIR}/include_10_15/SDL")
-    set(EXECUTABLE_NAME "Physics_Project_10_15")
-    set(INCLUDE_BASE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/include_10_15")
+    add_custom_target(copy_sdl_10_4 ALL
+        DEPENDS SDL12_build
+        COMMENT "Copying SDL1.2 install into ${PROJECT_LIB_DIR} and ${PROJECT_INCLUDE_SDL_DIR}"
+        COMMAND ${CMAKE_COMMAND} -E echo "Copying SDL1.2 from ${SDL12_INSTALL_PREFIX} to project folders"
+        COMMAND ${CMAKE_COMMAND} -E make_directory "${PROJECT_LIB_DIR}"
+        COMMAND ${CMAKE_COMMAND} -E make_directory "${PROJECT_INCLUDE_SDL_DIR}"
+        COMMAND ${CMAKE_COMMAND} -E copy_directory "${SDL12_INSTALL_PREFIX}/lib" "${PROJECT_LIB_DIR}"
+        COMMAND ${CMAKE_COMMAND} -E copy_directory "${SDL12_INSTALL_PREFIX}/include/SDL" "${PROJECT_INCLUDE_SDL_DIR}"
+    )
+
+    set(SDL12_STATIC_LIB "${SDL12_INSTALL_PREFIX}/lib/libSDL.a")
+    set(SDL12_INCLUDE_DIR "${SDL12_INSTALL_PREFIX}/include/SDL")
+
+    # Create directories to satisfy CMake's imported target validation
+    file(MAKE_DIRECTORY "${SDL12_INSTALL_PREFIX}/lib")
+    file(MAKE_DIRECTORY "${SDL12_INSTALL_PREFIX}/include")
+
+
+elseif(BUILD_FOR_10_7)
+    # x86_64 10.7 target - place build outputs in the build tree
+    set(PROJECT_LIB_DIR "${CMAKE_BINARY_DIR}/lib_10_7")
+    set(PROJECT_INCLUDE_SDL_DIR "${CMAKE_BINARY_DIR}/include_10_7/SDL")
+    set(EXECUTABLE_NAME "Physics_Project_10_7")
+    set(INCLUDE_BASE_DIR "${CMAKE_BINARY_DIR}/include_10_7")
+
+elseif(BUILD_FOR_11_0)
+    # Modern macOS 11.0+ target - place build outputs in the build tree
+    set(PROJECT_LIB_DIR "${CMAKE_BINARY_DIR}/lib_11_0")
+    set(PROJECT_INCLUDE_SDL_DIR "${CMAKE_BINARY_DIR}/include_11_0/SDL")
+    set(EXECUTABLE_NAME "Physics_Project_11_0")
+    set(INCLUDE_BASE_DIR "${CMAKE_BINARY_DIR}/include_11_0")
 else()
-    set(PROJECT_LIB_DIR "${CMAKE_CURRENT_SOURCE_DIR}/lib")
-    set(PROJECT_INCLUDE_SDL_DIR "${CMAKE_CURRENT_SOURCE_DIR}/include/SDL")
+    # Fallback: place general build artifacts in build/
+    set(PROJECT_LIB_DIR "${CMAKE_BINARY_DIR}/lib")
+    set(PROJECT_INCLUDE_SDL_DIR "${CMAKE_BINARY_DIR}/include/SDL")
     set(EXECUTABLE_NAME "Physics_Project")
-    set(INCLUDE_BASE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/include")
+    set(INCLUDE_BASE_DIR "${CMAKE_BINARY_DIR}/include")
 endif()
 
 # --- SDL2/sdl12-compat build (for non-10.4 builds) ---
@@ -144,14 +386,32 @@ if(NOT BUILD_FOR_10_4)
     )
 endif()
 
+# --- Collect tetimg resources for bundle ---
+file(GLOB TETIMG_RESOURCES "${CMAKE_CURRENT_SOURCE_DIR}/tetimg/*.bmp")
+
 # --- Main executable ---
 if(BUILD_FOR_10_4)
-    add_executable(${EXECUTABLE_NAME} main.c eprintf_stub.c)
+    add_executable(${EXECUTABLE_NAME} MACOSX_BUNDLE main.c eprintf_stub.c ${TETIMG_RESOURCES})
     set_source_files_properties(main.c PROPERTIES LANGUAGE OBJC)
     target_compile_definitions(${EXECUTABLE_NAME} PRIVATE BUILD_FOR_10_4)
 else()
-    add_executable(${EXECUTABLE_NAME} main.c)
+    add_executable(${EXECUTABLE_NAME} MACOSX_BUNDLE main.c ${TETIMG_RESOURCES})
 endif()
+
+# Place tetimg resources into the bundle's Resources/tetimg directory
+foreach(res_file ${TETIMG_RESOURCES})
+    set_source_files_properties(${res_file} PROPERTIES
+        MACOSX_PACKAGE_LOCATION "Resources/tetimg"
+    )
+endforeach()
+
+# Set bundle properties
+set_target_properties(${EXECUTABLE_NAME} PROPERTIES
+    MACOSX_BUNDLE_BUNDLE_NAME "ModestBricks"
+    MACOSX_BUNDLE_GUI_IDENTIFIER "com.mrmacduckinson.modestbricks"
+    MACOSX_BUNDLE_BUNDLE_VERSION "1.0"
+    MACOSX_BUNDLE_SHORT_VERSION_STRING "1.0"
+)
 
 target_include_directories(${EXECUTABLE_NAME} PRIVATE ${INCLUDE_BASE_DIR})
 
@@ -197,7 +457,7 @@ else()
 
     set_target_properties(${EXECUTABLE_NAME} PROPERTIES BUILD_RPATH "${PROJECT_LIB_DIR}")
 
-    if(APPLE AND BUILD_FOR_10_15)
+    if(APPLE AND BUILD_FOR_10_7)
         target_compile_options(${EXECUTABLE_NAME} PRIVATE
                 "-isysroot" "${CMAKE_OSX_SYSROOT}"
                 "-mmacosx-version-min=10.7"
@@ -209,4 +469,27 @@ else()
     endif()
 
     target_link_libraries(${EXECUTABLE_NAME} PRIVATE SDL12_compat_imported)
+
+    # Make the .app self-contained: copy SDL dylibs into Contents/Frameworks of the bundle
+    if(APPLE)
+        # Where to place frameworks relative to the built executable
+        set(_bundle_frameworks_dir "$<TARGET_FILE_DIR:${EXECUTABLE_NAME}>/../Frameworks")
+
+        add_custom_command(TARGET ${EXECUTABLE_NAME} POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E echo "Preparing ${EXECUTABLE_NAME} bundle frameworks at ${_bundle_frameworks_dir}"
+            COMMAND ${CMAKE_COMMAND} -E make_directory "${_bundle_frameworks_dir}"
+            # copy the sdl12-compat dylib and SDL2 dylib into the bundle
+            COMMAND ${CMAKE_COMMAND} -E copy_if_different "$<TARGET_FILE:${SDL12COMPAT_TARGET}>" "${_bundle_frameworks_dir}/$<TARGET_FILE_NAME:${SDL12COMPAT_TARGET}>"
+            COMMAND ${CMAKE_COMMAND} -E copy_if_different "$<TARGET_FILE:${SDL2_MAIN_TARGET}>" "${_bundle_frameworks_dir}/$<TARGET_FILE_NAME:${SDL2_MAIN_TARGET}>"
+            # set the dylib id to @rpath/<name>
+            COMMAND install_name_tool -id "@rpath/$<TARGET_FILE_NAME:${SDL12COMPAT_TARGET}>" "${_bundle_frameworks_dir}/$<TARGET_FILE_NAME:${SDL12COMPAT_TARGET}>"
+            COMMAND install_name_tool -id "@rpath/$<TARGET_FILE_NAME:${SDL2_MAIN_TARGET}>" "${_bundle_frameworks_dir}/$<TARGET_FILE_NAME:${SDL2_MAIN_TARGET}>"
+            # change the executable to reference @rpath/<name> instead of the absolute build path
+            COMMAND install_name_tool -change "$<TARGET_FILE:${SDL12COMPAT_TARGET}>" "@rpath/$<TARGET_FILE_NAME:${SDL12COMPAT_TARGET}>" "$<TARGET_FILE:${EXECUTABLE_NAME}>"
+            COMMAND install_name_tool -change "$<TARGET_FILE:${SDL2_MAIN_TARGET}>" "@rpath/$<TARGET_FILE_NAME:${SDL2_MAIN_TARGET}>" "$<TARGET_FILE:${EXECUTABLE_NAME}>"
+            # Ensure the executable will search @executable_path/../Frameworks at runtime
+            COMMAND install_name_tool -add_rpath "@executable_path/../Frameworks" "$<TARGET_FILE:${EXECUTABLE_NAME}>"
+            COMMENT "Embedding SDL dylibs into ${EXECUTABLE_NAME}.app and fixing up install names"
+        )
+    endif()
 endif()
