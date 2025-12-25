@@ -3,11 +3,11 @@ cmake_minimum_required(VERSION 3.16)
 # ============================================================================
 # Multi-target build options - enable as many as you want
 # ============================================================================
-option(BUILD_FOR_11_0 "Build for macOS 11.0+ (arm64)" ON)
-option(BUILD_FOR_10_7 "Build for macOS 10.7+ with 10.15 SDK (x86_64)" ON)
-option(BUILD_FOR_10_4 "Build for macOS 10.4-10.6 Intel with SDL 1.2 (i386)" ON)
-option(BUILD_FOR_PPC "Build for classic Mac PowerPC with Retro68" ON)
-option(BUILD_FOR_M68K "Build for classic Mac m68k with Retro68" ON)
+option(BUILD_FOR_11_0 "Build for macOS 11.0+ (very mdoern SDK) (arm64) (sdl12-compat)" ON)
+option(BUILD_FOR_10_7 "Build for macOS 10.7+ (10.15 SDK) (x86_64) (sdl12-compat)" ON)
+option(BUILD_FOR_10_4 "Build for macOS 10.4-10.14 (10.4u SDK) (i386) (SDL 1.2)" ON)
+option(BUILD_FOR_PPC "Build for Mac OS 8.1-10.4 (Retro68 Macintosh Toolbox) (PowerPC) (modified SDL 1.2)" ON)
+option(BUILD_FOR_M68K "Build for Mac OS 8.1-??? (Retro68 Macintosh Toolbox) (m68k) (modified SDL 1.2" ON)
 
 # If this is a multi-build invocation, delegate to ExternalProject
 if(NOT DEFINED IS_SUBBUILD)
