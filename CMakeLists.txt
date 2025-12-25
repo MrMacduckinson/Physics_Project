@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.16)
 # ============================================================================
 # Multi-target build options - enable as many as you want
 # ============================================================================
-option(BUILD_FOR_11_0 "Build for macOS 11.0+ (very mdoern SDK) (arm64) (sdl12-compat)" ON)
+option(BUILD_FOR_11_0 "Build for macOS 11.0+ (very modern SDK) (arm64) (sdl12-compat)" ON)
 option(BUILD_FOR_10_7 "Build for macOS 10.7+ (10.15 SDK) (x86_64) (sdl12-compat)" ON)
 option(BUILD_FOR_10_4 "Build for macOS 10.4-10.14 (10.4u SDK) (i386) (SDL 1.2)" ON)
 option(BUILD_FOR_PPC "Build for Mac OS 8.1-10.4 (Retro68 Macintosh Toolbox) (PowerPC) (modified SDL 1.2)" ON)
